@@ -211,6 +211,93 @@ export const FEAST_VIDEOS: FeastVideo[] = [
   },
 ];
 
+/* --------------------------- Patronal feasts ------------------------ */
+// Feast dates follow the universal liturgical calendar; the parish's exact
+// Perunnal programme is announced each year — confirm with the parish office.
+
+export interface PatronalFeast {
+  name: string;
+  malayalam: string;
+  date: string;
+  description: string;
+  /** anchor to the Perunnal Memories video section, if a recording exists */
+  watchAnchor?: string;
+}
+
+export const PATRONAL_FEASTS: PatronalFeast[] = [
+  {
+    name: 'Our Lady of Lourdes',
+    malayalam: 'പരിശുദ്ധ ലൂർദ് മാതാവിന്റെ തിരുനാൾ',
+    date: '11 February',
+    description:
+      'Our patroness and the heart of our parish — the main Perunnal, celebrated with solemn Qurbana, procession and days of festivity.',
+    watchAnchor: '#feast-videos',
+  },
+  {
+    name: 'St. Sebastian',
+    malayalam: 'വി. സെബസ്ത്യാനോസിന്റെ തിരുനാൾ',
+    date: '20 January',
+    description:
+      'Co-patron of our parish — martyr and protector, honoured with special prayers and celebration.',
+  },
+];
+
+/* ----------------------------- Sacraments --------------------------- */
+// Generic descriptions; arrangements are always made via the parish office.
+
+export const SACRAMENTS = [
+  {
+    name: 'Baptism',
+    text: 'Welcoming children and adults into the Church — infant baptisms are arranged with the parish office.',
+  },
+  {
+    name: 'Reconciliation',
+    text: 'Confession heard before Mass and anytime on request — come as you are.',
+  },
+  {
+    name: 'First Holy Communion',
+    text: 'After catechism preparation, our children receive the Eucharist for the first time.',
+  },
+  {
+    name: 'Confirmation',
+    text: 'Sealed with the gift of the Holy Spirit in the sacrament of Chrismation.',
+  },
+  {
+    name: 'Marriage',
+    text: 'Couples preparing for matrimony are asked to meet the vicar well in advance.',
+  },
+  {
+    name: 'Anointing of the Sick',
+    text: 'For the ill and the elderly — the parish office can be reached at any hour of need.',
+  },
+];
+
+/* ----------------------------- Ministries --------------------------- */
+// confirm: exact ministry names and details with the parish office.
+
+export const MINISTRIES = [
+  {
+    name: 'Choir',
+    text: 'Voices that lead the congregation in song at every Qurbana and feast.',
+  },
+  {
+    name: 'Youth',
+    text: 'Young parishioners growing together in faith, friendship and service.',
+  },
+  {
+    name: 'Catechism',
+    text: "Sunday faith formation, guiding our children in the Church's teachings.",
+  },
+  {
+    name: 'Charitable Works',
+    text: 'Serving the poor and the needy in our neighbourhood with quiet generosity.',
+  },
+  {
+    name: 'Prayer Groups',
+    text: 'Gathering for novenas, the rosary and intercession through the week.',
+  },
+];
+
 /* ------------------------------ Gallery ----------------------------- */
 
 export type GalleryCategory = 'Church' | 'Holy Mass' | 'Feast' | 'Community' | 'Events';

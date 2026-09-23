@@ -1,10 +1,26 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import {
+  ArrowRight,
+  Droplets,
+  HeartHandshake,
+  Wheat,
+  Flame,
+  Heart,
+  Cross,
+  Music,
+  Users,
+  BookOpen,
+  HandHeart,
+  Church,
+} from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
 import { IMAGES } from '../data/images';
-import { PARISH, MILESTONES, VALUES, MISSION } from '../data/site';
+import { PARISH, MILESTONES, VALUES, MISSION, SACRAMENTS, MINISTRIES } from '../data/site';
+
+const SACRAMENT_ICONS = [Droplets, HeartHandshake, Wheat, Flame, Heart, Cross];
+const MINISTRY_ICONS = [Music, Users, BookOpen, HandHeart, Church];
 
 function Story() {
   return (
@@ -175,6 +191,93 @@ export default function About() {
       <Values />
       <Leadership />
       <CommunitySection />
+      <Sacraments />
+      <Ministries />
     </main>
+  );
+}
+
+function Sacraments() {
+  return (
+    <section className="bg-ivory py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <SectionHeading
+          eyebrow="Milestones of faith"
+          title="Sacraments"
+          description="From baptism to matrimony — the sacred moments of Christian life, celebrated in the Syro-Malabar tradition."
+        />
+        <div className="mt-14 grid gap-px bg-maroon/10 sm:grid-cols-2 lg:grid-cols-3">
+          {SACRAMENTS.map((s, i) => {
+            const Icon = SACRAMENT_ICONS[i % SACRAMENT_ICONS.length];
+            return (
+              <Reveal key={s.name} delay={(i % 3) * 0.07} className="h-full">
+                <div className="group h-full bg-ivory p-9 transition-colors duration-500 hover:bg-maroon-deep">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 text-gold-dark transition-colors duration-500 group-hover:border-gold/60 group-hover:text-gold-light">
+                    <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-5 font-display text-2xl font-medium text-maroon-deep transition-colors duration-500 group-hover:text-ivory">
+                    {s.name}
+                  </h3>
+                  <p className="mt-3 text-[15px] font-light leading-relaxed text-charcoal/65 transition-colors duration-500 group-hover:text-ivory/70">
+                    {s.text}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+        <Reveal delay={0.1}>
+          <p className="mx-auto mt-12 max-w-2xl text-center text-[15px] font-light italic leading-relaxed text-charcoal/60">
+            To arrange a sacrament, please speak to the parish office — we will guide you
+            through every step.
+          </p>
+          <div className="mt-6 text-center">
+            <Link to="/contact" className="btn-maroon">
+              Contact Parish Office <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Ministries() {
+  return (
+    <section className="bg-maroon-deep py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <SectionHeading
+          dark
+          eyebrow="Serve & belong"
+          title="Ministries & Groups"
+          description="The life of our parish is carried by its people — there is a place for every gift here."
+        />
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {MINISTRIES.map((m, i) => {
+            const Icon = MINISTRY_ICONS[i % MINISTRY_ICONS.length];
+            return (
+              <Reveal key={m.name} delay={(i % 3) * 0.07}>
+                <div className="h-full border border-gold/25 bg-maroon-rich/40 p-9 transition-colors duration-500 hover:border-gold/60">
+                  <Icon className="h-7 w-7 text-gold-light" strokeWidth={1.5} aria-hidden="true" />
+                  <h3 className="mt-5 font-display text-2xl font-medium text-ivory">{m.name}</h3>
+                  <p className="mt-3 text-[15px] font-light leading-relaxed text-ivory/65">
+                    {m.text}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+        <Reveal delay={0.15}>
+          <p className="mx-auto mt-12 max-w-2xl text-center text-[15px] font-light leading-relaxed text-ivory/60">
+            Want to lend your voice, your hands or your time?{' '}
+            <Link to="/contact" className="text-gold-light underline-offset-4 transition-colors hover:text-gold hover:underline">
+              Get in touch
+            </Link>{' '}
+            — we would love to welcome you.
+          </p>
+        </Reveal>
+      </div>
+    </section>
   );
 }

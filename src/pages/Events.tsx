@@ -5,7 +5,55 @@ import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
 import { IMAGES } from '../data/images';
-import { PARISH, EVENTS, EVENT_CATEGORIES, FEAST_VIDEOS, type ParishEvent, type EventCategory } from '../data/site';
+import { PARISH, EVENTS, EVENT_CATEGORIES, FEAST_VIDEOS, PATRONAL_FEASTS, type ParishEvent, type EventCategory } from '../data/site';
+
+function Feasts() {
+  return (
+    <section className="bg-maroon-deep py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <SectionHeading
+          dark
+          eyebrow="Patronal feasts"
+          title="Our Feasts"
+          description="Two heavenly patrons watch over Thalayanadu — their feasts are the high points of our parish year."
+        />
+        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+          {PATRONAL_FEASTS.map((feast, i) => (
+            <Reveal key={feast.name} delay={i * 0.08} className="h-full">
+              <div className="flex h-full flex-col border border-gold/25 bg-maroon-rich/40 p-10 transition-colors duration-500 hover:border-gold/60 md:p-12">
+                <p className="text-[11px] font-medium uppercase tracking-luxe text-gold-light/80">
+                  {feast.date}
+                </p>
+                <h3 className="mt-3 font-display text-3xl font-medium text-ivory md:text-4xl">
+                  {feast.name}
+                </h3>
+                <p className="mt-2 font-malayalam text-xl text-gold-light/90">{feast.malayalam}</p>
+                <div className="gold-rule-left mt-6" aria-hidden="true" />
+                <p className="mt-6 flex-1 text-[15px] font-light leading-relaxed text-ivory/65">
+                  {feast.description}
+                </p>
+                {feast.watchAnchor && (
+                  <a
+                    href={feast.watchAnchor}
+                    className="mt-8 inline-flex items-center gap-2 text-[12px] font-medium uppercase tracking-[0.18em] text-gold-light transition-colors hover:text-gold"
+                  >
+                    Watch the 2026 feast <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                )}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal delay={0.15}>
+          <p className="mx-auto mt-10 max-w-2xl text-center text-[14px] font-light italic leading-relaxed text-ivory/50">
+            Feast dates follow the liturgical calendar; the parish&apos;s exact Perunnal
+            programme is announced each year.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
 function EventModal({ event, onClose }: { event: ParishEvent | null; onClose: () => void }) {
   return (
@@ -90,6 +138,8 @@ export default function Events() {
         description="Feasts, novenas and gatherings through the year — the rhythm of our life together."
         image={IMAGES['event-feast']}
       />
+
+      <Feasts />
 
       <section className="bg-ivory py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8">

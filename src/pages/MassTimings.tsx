@@ -51,7 +51,7 @@ function Schedule() {
           description="The Holy Qurbana is celebrated according to the Syro-Malabar liturgy. Confessions are heard before Mass and on request."
         />
 
-        <div className="mt-14 overflow-hidden border border-maroon/10 bg-white/60 shadow-card">
+        <div className="mt-14 overflow-hidden rounded-3xl border border-maroon/10 bg-white/60 shadow-card">
           {MASS_SCHEDULE.map((m, i) => {
             const isToday = todaysMassEntries().some((t) => t.id === m.id);
             return (

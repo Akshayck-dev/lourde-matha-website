@@ -21,7 +21,7 @@ function Feasts() {
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {PATRONAL_FEASTS.map((feast, i) => (
             <Reveal key={feast.name} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col border border-gold/25 bg-maroon-rich/40 p-10 transition-colors duration-500 hover:border-gold/60 md:p-12">
+              <div className="flex h-full flex-col rounded-3xl border border-gold/25 bg-maroon-rich/40 p-10 transition-colors duration-500 hover:border-gold/60 md:p-12">
                 <p className="text-[11px] font-medium uppercase tracking-luxe text-gold-light/80">
                   {feast.date}
                 </p>
@@ -76,7 +76,7 @@ function EventModal({ event, onClose }: { event: ParishEvent | null; onClose: ()
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-ivory shadow-soft"
+            className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-ivory shadow-soft"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative h-60 md:h-72">
@@ -178,7 +178,7 @@ export default function Events() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="group flex flex-col bg-white/70 shadow-card transition-shadow duration-500 hover:shadow-soft"
+                  className="group flex flex-col overflow-hidden rounded-3xl bg-white/70 shadow-card transition-shadow duration-500 hover:shadow-soft"
                 >
                   <button
                     type="button"
@@ -255,7 +255,7 @@ export default function Events() {
                   href={video.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block bg-maroon/40 ring-1 ring-gold/25 transition-all duration-300 hover:-translate-y-1 hover:ring-gold/60"
+                  className="group block overflow-hidden rounded-3xl bg-maroon/40 ring-1 ring-gold/25 transition-all duration-300 hover:-translate-y-1 hover:ring-gold/60"
                   aria-label={`Watch on YouTube: ${video.title}`}
                 >
                   <div className="relative aspect-video overflow-hidden">

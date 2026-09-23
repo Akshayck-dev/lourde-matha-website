@@ -59,7 +59,7 @@ body {
 /* ---------- image treatments ---------- */
 
 .img-frame {
-  @apply overflow-hidden bg-cream;
+  @apply overflow-hidden rounded-2xl bg-cream;
 }
 
 .img-frame img {

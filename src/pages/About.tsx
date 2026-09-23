@@ -91,7 +91,7 @@ function Values() {
         <div className="mt-14 grid gap-px bg-maroon/10 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.07} className="h-full">
-              <div className="group h-full bg-ivory p-9 transition-colors duration-500 hover:bg-maroon-deep">
+              <div className="group h-full rounded-3xl bg-ivory p-9 transition-colors duration-500 hover:bg-maroon-deep">
                 <p className="font-display text-lg italic text-gold-dark transition-colors group-hover:text-gold-light">
                   0{i + 1}
                 </p>
@@ -123,7 +123,7 @@ function Leadership() {
 
         <div className="mt-14 flex justify-center">
           <Reveal>
-            <div className="group relative max-w-sm border border-gold/25 bg-maroon-rich/40 p-10 text-center transition-colors duration-500 hover:border-gold/60">
+            <div className="group relative max-w-sm rounded-3xl border border-gold/25 bg-maroon-rich/40 p-10 text-center transition-colors duration-500 hover:border-gold/60">
               {/* monogram */}
               <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-gold/60">
                 <span className="font-display text-4xl font-medium text-gold-light">FS</span>
@@ -214,7 +214,7 @@ function Sacraments() {
             const Icon = SACRAMENT_ICONS[i % SACRAMENT_ICONS.length];
             return (
               <Reveal key={s.name} delay={(i % 3) * 0.07} className="h-full">
-                <div className="group h-full bg-ivory p-9 transition-colors duration-500 hover:bg-maroon-deep">
+                <div className="group h-full rounded-3xl bg-ivory p-9 transition-colors duration-500 hover:bg-maroon-deep">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 text-gold-dark transition-colors duration-500 group-hover:border-gold/60 group-hover:text-gold-light">
                     <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
                   </span>
@@ -262,7 +262,7 @@ function Ministries() {
             const Icon = MINISTRY_ICONS[i % MINISTRY_ICONS.length];
             return (
               <Reveal key={m.name} delay={(i % 3) * 0.07}>
-                <div className="h-full border border-gold/25 bg-maroon-rich/40 p-9 transition-colors duration-500 hover:border-gold/60">
+                <div className="h-full rounded-3xl border border-gold/25 bg-maroon-rich/40 p-9 transition-colors duration-500 hover:border-gold/60">
                   <Icon className="h-7 w-7 text-gold-light" strokeWidth={1.5} aria-hidden="true" />
                   <h3 className="mt-5 font-display text-2xl font-medium text-ivory">{m.name}</h3>
                   <p className="mt-3 text-[15px] font-light leading-relaxed text-ivory/65">

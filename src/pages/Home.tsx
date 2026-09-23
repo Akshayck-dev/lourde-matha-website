@@ -158,7 +158,7 @@ function Welcome() {
             className="pointer-events-none absolute -bottom-5 -left-5 -z-10 h-full w-full border border-gold/50"
             aria-hidden="true"
           />
-          <div className="absolute -right-4 top-8 hidden bg-maroon-deep px-7 py-6 text-ivory shadow-soft md:block">
+          <div className="absolute -right-4 top-8 hidden rounded-2xl bg-maroon-deep px-7 py-6 text-ivory shadow-soft md:block">
             <p className="font-display text-4xl font-medium text-gold-light">1935</p>
             <p className="mt-1 text-[11px] uppercase tracking-luxe text-ivory/60">Established</p>
           </div>
@@ -308,7 +308,7 @@ function ParishLife() {
             <Reveal key={item.title} delay={i * 0.08} className="h-full">
               <Link
                 to="/about"
-                className="group relative block h-[420px] overflow-hidden bg-maroon-deep"
+                className="group relative block h-[420px] overflow-hidden rounded-3xl bg-maroon-deep"
                 aria-label={`${item.title} — discover our story`}
               >
                 <img
@@ -573,7 +573,7 @@ function Location() {
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {/* map */}
           <Reveal className="min-h-[380px] min-w-0">
-            <div className="relative h-full min-h-[380px] overflow-hidden border border-maroon/10 shadow-card">
+            <div className="relative h-full min-h-[380px] overflow-hidden rounded-3xl border border-maroon/10 shadow-card">
               <iframe
                 title={`Map — ${PARISH.name}, ${PARISH.place}`}
                 src={PARISH.mapsEmbed}

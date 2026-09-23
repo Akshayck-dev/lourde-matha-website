@@ -41,7 +41,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/lourde-matha-website">
       <SmoothScroll />
       <ScrollToTop />
       <Navbar />

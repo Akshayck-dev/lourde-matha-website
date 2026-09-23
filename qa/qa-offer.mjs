@@ -1,0 +1,20 @@
+import { chromium } from 'playwright-core';
+const b = await chromium.launch({ executablePath: '/home/hatch/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell' });
+const p = await (await b.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
+const errs = [];
+p.on('pageerror', e => errs.push(e.message));
+p.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
+await p.goto('http://localhost:4173/offerings', { waitUntil: 'networkidle' });
+await p.waitForTimeout(1200);
+await p.screenshot({ path: '/tmp/qa-offer-top.png' });
+await p.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.45));
+await p.waitForTimeout(1500);
+await p.screenshot({ path: '/tmp/qa-offer-mid.png' });
+await p.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+await p.waitForTimeout(1500);
+await p.screenshot({ path: '/tmp/qa-offer-bot.png' });
+// nav link present?
+const nav = await p.$$eval('nav a', els => els.map(e => e.textContent.trim()));
+console.log('NAV:', JSON.stringify(nav));
+console.log('ERRORS:', JSON.stringify(errs));
+await b.close();

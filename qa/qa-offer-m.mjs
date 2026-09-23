@@ -1,0 +1,14 @@
+import { chromium } from 'playwright-core';
+const EXE = process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell';
+const b = await chromium.launch({ executablePath: EXE });
+const p = await (await b.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+const errs = [];
+p.on('pageerror', e => errs.push(e.message));
+await p.goto('http://localhost:4173/offerings', { waitUntil: 'networkidle' });
+await p.waitForTimeout(1000);
+await p.evaluate(() => window.scrollTo(0, 700));
+await p.waitForTimeout(1500);
+await p.screenshot({ path: '/tmp/qa-offer-mobile.png' });
+const overflow = await p.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+console.log('h-overflow:', overflow, '| ERRORS:', JSON.stringify(errs));
+await b.close();

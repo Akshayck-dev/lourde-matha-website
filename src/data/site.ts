@@ -274,6 +274,34 @@ export const VALUES = [
 export const MISSION =
   'To be a living sanctuary of faith in Thalayanadu — where the Holy Qurbana is celebrated with reverence, every family is known by name, and the love of Christ reaches beyond our walls into the world.';
 
+/* ---------------------------- Offerings ------------------------------ */
+// NOTE (2026-09-23): structure modelled on peringuzhachurch.org/offerings,
+// shared by the user as the reference. Amounts and bank details below are
+// PLACEHOLDERS ('—') — confirm the real rate list and the parish's bank
+// account with the parish office before publishing.
+
+export interface OfferingItem {
+  ml: string;
+  en: string;
+  amount: string;
+}
+
+export const OFFERING_RATES: OfferingItem[] = [
+  { ml: 'പാട്ടുകുർബാന', en: 'Sung Mass', amount: '—' },
+  { ml: 'കുർബാന', en: 'Holy Qurbana', amount: '—' },
+  { ml: 'നൊവേന', en: 'Novena', amount: '—' },
+  { ml: 'ലദീഞ്ഞ്', en: 'Litany', amount: '—' },
+  { ml: 'ഇടവക തിരുനാൾ പ്രസുദേന്തി', en: 'Parish Feast Offering', amount: '—' },
+  { ml: 'തിരുനാൾ നേർച്ച', en: 'Feast Day Offering', amount: '—' },
+];
+
+export const OFFERING_BANK = [
+  { label: 'A/c No', value: '—' },
+  { label: 'A/c Name', value: '—' },
+  { label: 'Branch', value: '—' },
+  { label: 'IFSC', value: '—' },
+];
+
 /* ------------------------------ Nav --------------------------------- */
 
 export const NAV_LINKS = [
@@ -282,5 +310,6 @@ export const NAV_LINKS = [
   { label: 'Mass Timings', to: '/mass-timings' },
   { label: 'Events', to: '/events' },
   { label: 'Gallery', to: '/gallery' },
+  { label: 'Offerings', to: '/offerings' },
   { label: 'Contact', to: '/contact' },
 ];

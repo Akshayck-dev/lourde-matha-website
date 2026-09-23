@@ -24,6 +24,7 @@ export default {
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         sans: ['Jost', 'system-ui', '-apple-system', 'sans-serif'],
+        malayalam: ['"Noto Serif Malayalam"', '"Cormorant Garamond"', 'Georgia', 'serif'],
       },
       letterSpacing: {
         luxe: '0.32em',

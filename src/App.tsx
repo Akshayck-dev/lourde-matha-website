@@ -7,6 +7,7 @@ import About from './pages/About';
 import MassTimings from './pages/MassTimings';
 import Events from './pages/Events';
 import Gallery from './pages/Gallery';
+import Offerings from './pages/Offerings';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/mass-timings" element={<MassTimings />} />
         <Route path="/events" element={<Events />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/offerings" element={<Offerings />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="*" element={<Home />} />

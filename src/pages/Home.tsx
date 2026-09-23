@@ -565,7 +565,7 @@ function Location() {
 
           {/* details */}
           <Reveal delay={0.1} className="flex flex-col justify-center">
-            <p className="font-display text-xl italic text-maroon-deep/70">
+            <p className="font-malayalam text-xl text-maroon-deep/80">
               {PARISH.malayalamName}
             </p>
             <ul className="mt-2 divide-y divide-maroon/10">

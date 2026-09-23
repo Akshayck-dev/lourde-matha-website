@@ -1,0 +1,93 @@
+@import './assets/fonts/fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ivory font-sans text-charcoal antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #c9a227;
+  color: #2e040c;
+}
+
+/* ---------- editorial primitives ---------- */
+
+.eyebrow {
+  @apply font-sans text-[11px] font-medium uppercase tracking-luxe text-gold-dark;
+}
+
+.eyebrow-light {
+  @apply font-sans text-[11px] font-medium uppercase tracking-luxe text-gold-light;
+}
+
+.gold-rule {
+  @apply mx-auto h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent;
+}
+
+.gold-rule-left {
+  @apply h-px w-16 bg-gradient-to-r from-gold to-transparent;
+}
+
+.display-heading {
+  @apply font-display font-medium leading-[1.08] text-maroon-deep;
+  text-wrap: balance;
+}
+
+/* ---------- buttons ---------- */
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.18em] transition-all duration-300;
+}
+
+.btn-gold {
+  @apply btn bg-gold text-maroon-deep hover:bg-gold-light hover:shadow-soft;
+}
+
+.btn-outline {
+  @apply btn border border-ivory/40 text-ivory hover:border-gold-light hover:text-gold-light;
+}
+
+.btn-outline-dark {
+  @apply btn border border-maroon/25 text-maroon-deep hover:border-gold hover:bg-maroon hover:text-ivory;
+}
+
+.btn-maroon {
+  @apply btn bg-maroon text-ivory hover:bg-maroon-rich hover:shadow-soft;
+}
+
+/* ---------- image treatments ---------- */
+
+.img-frame {
+  @apply overflow-hidden bg-cream;
+}
+
+.img-frame img {
+  @apply h-full w-full object-cover transition-transform duration-[1.4s] ease-out;
+}
+
+.img-frame:hover img {
+  @apply scale-[1.045];
+}
+
+/* thin elegant scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f5ebd5;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a227;
+  border: 2px solid #f5ebd5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9a7b1b;
+}

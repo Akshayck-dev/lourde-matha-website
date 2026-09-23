@@ -19,6 +19,7 @@ import galleryStainedglass from '../assets/images/gallery-stainedglass.jpg';
 import galleryExterior from '../assets/images/gallery-exterior.jpg';
 import galleryCandles from '../assets/images/gallery-candles.jpg';
 import massTimingsBg from '../assets/images/mass-timings-bg.jpg';
+import videoPerunnal2026Day1 from '../assets/images/video-perunnal-2026-day1.jpg';
 
 export const IMAGES: Record<string, string> = {
   'hero-church': heroChurch,
@@ -38,4 +39,5 @@ export const IMAGES: Record<string, string> = {
   'gallery-exterior': galleryExterior,
   'gallery-candles': galleryCandles,
   'mass-timings-bg': massTimingsBg,
+  'video-perunnal-2026-day1': videoPerunnal2026Day1,
 };

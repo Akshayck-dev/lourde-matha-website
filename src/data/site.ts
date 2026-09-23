@@ -186,6 +186,31 @@ export const EVENTS: ParishEvent[] = [
   },
 ];
 
+/* ------------------------- Past feast videos ------------------------- */
+// Recordings of past Perunnal celebrations. To add more, save the video's
+// thumbnail as src/assets/images/video-<slug>.jpg, register it in
+// src/data/images.ts, then append an entry here.
+
+export interface FeastVideo {
+  title: string;
+  titleMl: string;
+  dateLabel: string;
+  meta: string;
+  image: string; // key into IMAGES (local thumbnail)
+  url: string;
+}
+
+export const FEAST_VIDEOS: FeastVideo[] = [
+  {
+    title: 'Day 1 — Feast of Our Lady of Lourdes & St. Sebastian',
+    titleMl: 'തലയനാട് ലൂർദ്ദ് മാതാ പള്ളിയിൽ തിരുനാൾ',
+    dateLabel: 'Streamed 10 February 2026',
+    meta: '6 hrs · Suban Live Media',
+    image: 'video-perunnal-2026-day1',
+    url: 'https://www.youtube.com/live/lQlafXrwsxs',
+  },
+];
+
 /* ------------------------------ Gallery ----------------------------- */
 
 export type GalleryCategory = 'Church' | 'Holy Mass' | 'Feast' | 'Community' | 'Events';

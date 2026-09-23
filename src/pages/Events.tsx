@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, Clock, MapPin, CalendarDays, ArrowRight } from 'lucide-react';
+import { X, Clock, MapPin, CalendarDays, ArrowRight, Play } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
 import { IMAGES } from '../data/images';
-import { PARISH, EVENTS, EVENT_CATEGORIES, type ParishEvent, type EventCategory } from '../data/site';
+import { PARISH, EVENTS, EVENT_CATEGORIES, FEAST_VIDEOS, type ParishEvent, type EventCategory } from '../data/site';
 
 function EventModal({ event, onClose }: { event: ParishEvent | null; onClose: () => void }) {
   return (
@@ -175,6 +175,69 @@ export default function Events() {
               No events in this category yet.
             </p>
           )}
+        </div>
+      </section>
+
+      {/* Past feast recordings */}
+      <section className="bg-maroon-deep py-24 md:py-32" aria-labelledby="feast-videos">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <Reveal>
+            <div id="feast-videos" className="text-center">
+              <p className="eyebrow-light">Watch</p>
+              <h2 className="mt-4 font-display text-4xl font-medium text-ivory md:text-5xl">
+                Perunnal Memories
+              </h2>
+              <p className="mt-3 font-malayalam text-xl text-ivory/70">കഴിഞ്ഞ തിരുനാൾ ആഘോഷങ്ങൾ</p>
+              <div className="gold-rule mx-auto mt-6" aria-hidden="true" />
+              <p className="mx-auto mt-6 max-w-2xl text-[15px] font-light leading-relaxed text-ivory/70">
+                Relive the faith and festivity of our past feasts — full recordings from the
+                parish&apos;s Perunnal celebrations.
+              </p>
+            </div>
+          </Reveal>
+          <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {FEAST_VIDEOS.map((video, i) => (
+              <Reveal key={video.url} delay={i * 0.08}>
+                <a
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block bg-maroon/40 ring-1 ring-gold/25 transition-all duration-300 hover:-translate-y-1 hover:ring-gold/60"
+                  aria-label={`Watch on YouTube: ${video.title}`}
+                >
+                  <div className="relative aspect-video overflow-hidden">
+                    <img
+                      src={IMAGES[video.image]}
+                      alt=""
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div
+                      className="absolute inset-0 bg-maroon-deep/35 transition-colors duration-300 group-hover:bg-maroon-deep/15"
+                      aria-hidden="true"
+                    />
+                    <span className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold text-maroon-deep shadow-soft transition-transform duration-300 group-hover:scale-110">
+                        <Play className="ml-1 h-6 w-6 fill-current" aria-hidden="true" />
+                      </span>
+                    </span>
+                    <span className="absolute bottom-3 right-3 bg-maroon-deep/80 px-2 py-1 text-[11px] font-medium tracking-wider text-ivory">
+                      YouTube
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <p className="font-malayalam text-lg font-medium leading-snug text-gold-light">
+                      {video.titleMl}
+                    </p>
+                    <p className="mt-2 font-display text-xl font-medium text-ivory">{video.title}</p>
+                    <p className="mt-3 text-[13px] font-light uppercase tracking-[0.16em] text-ivory/55">
+                      {video.dateLabel} · {video.meta}
+                    </p>
+                  </div>
+                </a>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

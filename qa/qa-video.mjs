@@ -1,0 +1,15 @@
+import { chromium } from 'playwright-core';
+const EXE = process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell';
+const b = await chromium.launch({ executablePath: EXE });
+const p = await (await b.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
+const errs = [];
+p.on('pageerror', e => errs.push(e.message));
+await p.goto('http://localhost:4173/events', { waitUntil: 'networkidle' });
+await p.waitForTimeout(1200);
+await p.evaluate(() => document.querySelector('#feast-videos').scrollIntoView({ block: 'center' }));
+await p.waitForTimeout(1800);
+await p.screenshot({ path: '/tmp/qa-video.png' });
+const link = await p.$eval('a[href*="youtube.com"]', a => a.href);
+console.log('LINK:', link);
+console.log('ERRORS:', JSON.stringify(errs));
+await b.close();

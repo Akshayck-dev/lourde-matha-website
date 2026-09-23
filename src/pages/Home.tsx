@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '../components/ui/button';
+
 import {
   motion,
   useReducedMotion,
@@ -108,12 +110,14 @@ function Hero() {
             transition={{ duration: 0.9, delay: 0.85, ease }}
             className="mt-10 flex flex-col gap-4 sm:flex-row"
           >
-            <Link to="/about" className="btn-gold">
-              Explore Our Parish <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-            <Link to="/mass-timings" className="btn-outline">
-              View Mass Timings
-            </Link>
+            <Button variant="gold" asChild>
+              <Link to="/about">
+                Explore Our Parish <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link to="/mass-timings">View Mass Timings</Link>
+            </Button>
           </motion.div>
         </div>
       </motion.div>
@@ -178,9 +182,11 @@ function Welcome() {
             </p>
           </Reveal>
           <Reveal delay={0.18}>
-            <Link to="/about" className="btn-maroon mt-9">
-              Discover Our Story <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <Button variant="maroon" asChild className="mt-9">
+              <Link to="/about">
+                Discover Our Story <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
           </Reveal>
         </div>
       </div>
@@ -247,9 +253,11 @@ function MassPreview() {
         </div>
 
         <Reveal className="mt-12 text-center">
-          <Link to="/mass-timings" className="btn-gold">
-            View Full Schedule <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          <Button variant="gold" asChild>
+            <Link to="/mass-timings">
+              View Full Schedule <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Button>
         </Reveal>
       </div>
     </section>
@@ -362,9 +370,11 @@ function Story() {
             sanctuary — where the Syro-Malabar liturgy is sung with devotion, and every
             generation finds its home beneath these arches.
           </p>
-          <Link to="/about" className="btn-outline mt-10">
-            Read Our Story <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          <Button variant="outline" asChild className="mt-10">
+            <Link to="/about">
+              Read Our Story <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Button>
         </Reveal>
       </div>
     </section>
@@ -468,9 +478,11 @@ function GalleryPreview() {
         </div>
 
         <Reveal className="mt-12 text-center">
-          <Link to="/gallery" className="btn-outline-dark">
-            View Gallery <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          <Button variant="outlineDark" asChild>
+            <Link to="/gallery">
+              View Gallery <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Button>
         </Reveal>
       </div>
     </section>
@@ -497,9 +509,11 @@ function Community() {
             </p>
           </Reveal>
           <Reveal delay={0.18}>
-            <Link to="/contact" className="btn-maroon mt-9">
-              Be Part of Our Community <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <Button variant="maroon" asChild className="mt-9">
+              <Link to="/contact">
+                Be Part of Our Community <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
           </Reveal>
         </div>
         <Reveal className="order-1 lg:order-2" delay={0.1}>
@@ -533,12 +547,11 @@ function Prayer() {
             Share your prayer intention with our parish community. Your request will be
             remembered in our novenas and at the altar — in confidence and with love.
           </p>
-          <a
-            href={`mailto:${PARISH.email}?subject=${encodeURIComponent('Prayer Intention')}`}
-            className="btn-gold mt-9"
-          >
-            Submit a Prayer Intention <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </a>
+          <Button variant="gold" asChild className="mt-9">
+            <a href={`mailto:${PARISH.email}?subject=${encodeURIComponent('Prayer Intention')}`}>
+              Submit a Prayer Intention <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </Button>
         </Reveal>
       </div>
     </section>
@@ -621,9 +634,11 @@ function Location() {
                 {PARISH.amenities}. {PARISH.grotto}
               </span>
             </p>
-            <a href={PARISH.mapsUrl} target="_blank" rel="noreferrer" className="btn-maroon mt-8 self-start">
-              Get Directions <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </a>
+            <Button variant="maroon" asChild className="mt-8 self-start">
+              <a href={PARISH.mapsUrl} target="_blank" rel="noreferrer">
+                Get Directions <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </Button>
           </Reveal>
         </div>
       </div>
@@ -658,9 +673,11 @@ function Blessing() {
             “The Lord bless you and keep you; the Lord make His face shine upon you.”
             Our doors — and our hearts — are open.
           </p>
-          <Link to="/contact" className="btn-gold mt-10">
-            Visit Our Parish <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          <Button variant="gold" asChild className="mt-10">
+            <Link to="/contact">
+              Visit Our Parish <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Button>
         </Reveal>
       </div>
     </section>

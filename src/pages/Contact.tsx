@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock, Send, CheckCircle2 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
+import { Button } from '../components/ui/button';
 import { IMAGES } from '../data/images';
 import { PARISH } from '../data/site';
 
@@ -88,9 +89,9 @@ function ContactForm() {
         />
       </div>
 
-      <button type="submit" className="btn-maroon mt-8 w-full">
+      <Button type="submit" variant="maroon" className="mt-8 w-full">
         Send Message <Send className="h-4 w-4" aria-hidden="true" />
-      </button>
+      </Button>
       <p className="mt-4 text-center text-[13px] font-light text-charcoal/50">
         This opens your email app with the message addressed to the parish office.
       </p>

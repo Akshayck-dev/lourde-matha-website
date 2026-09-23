@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { Button } from '../components/ui/button';
+
 import { Phone, Sparkles } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
@@ -85,9 +87,11 @@ function Schedule() {
               Timings may vary on feast days and special occasions. For baptisms, weddings,
               house blessings and other sacraments, please contact the parish office.
             </p>
-            <a href={PARISH.phoneHref} className="btn-maroon shrink-0">
-              <Phone className="h-4 w-4" aria-hidden="true" /> {PARISH.phone}
-            </a>
+            <Button variant="maroon" asChild className="shrink-0">
+              <a href={PARISH.phoneHref}>
+                <Phone className="h-4 w-4" aria-hidden="true" /> {PARISH.phone}
+              </a>
+            </Button>
           </div>
         </Reveal>
 

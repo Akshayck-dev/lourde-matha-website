@@ -5,6 +5,8 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { NAV_LINKS } from '../data/site';
 import { getLenis } from '../lib/lenis';
 import { Logo } from './Logo';
+import { Button } from './ui/button';
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -106,16 +108,16 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden lg:block">
-            <Link
-              to="/contact"
-              className={`btn !px-7 !py-3 ${
-                solid
-                  ? 'bg-maroon text-ivory hover:bg-maroon-rich'
-                  : 'bg-gold/95 text-maroon-deep hover:bg-gold-light'
-              }`}
+            <Button
+              variant={solid ? 'maroon' : 'gold'}
+              size="sm"
+              asChild
+              className={solid ? undefined : 'bg-gold/95'}
             >
-              Visit Us <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+              <Link to="/contact">
+                Visit Us <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
           </div>
 
           {/* Mobile hamburger */}
@@ -192,9 +194,11 @@ export default function Navbar() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="mt-10"
               >
-                <Link to="/contact" className="btn-gold w-full">
-                  Visit Us <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
+                <Button variant="gold" asChild className="w-full">
+                  <Link to="/contact">
+                    Visit Us <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
               </motion.div>
             </nav>
             <p className="px-8 pb-10 text-center text-xs uppercase tracking-luxe text-ivory/40">

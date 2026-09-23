@@ -1,6 +1,7 @@
 import { Landmark, Mail, Phone, Info } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
+import { Button } from '../components/ui/button';
 import { IMAGES } from '../data/images';
 import { PARISH, OFFERING_RATES, OFFERING_BANK } from '../data/site';
 
@@ -122,14 +123,18 @@ export default function Offerings() {
               parish office by email or phone.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a href={`mailto:${PARISH.email}`} className="btn-gold">
-                <Mail className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-                Email Parish Office
-              </a>
-              <a href={PARISH.phoneHref} className="btn-outline">
-                <Phone className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-                {PARISH.phone}
-              </a>
+              <Button variant="gold" asChild>
+                <a href={`mailto:${PARISH.email}`}>
+                  <Mail className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                  Email Parish Office
+                </a>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href={PARISH.phoneHref}>
+                  <Phone className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                  {PARISH.phone}
+                </a>
+              </Button>
             </div>
           </Reveal>
         </div>

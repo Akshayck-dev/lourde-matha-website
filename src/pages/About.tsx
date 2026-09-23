@@ -16,6 +16,7 @@ import {
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
+import { Button } from '../components/ui/button';
 import { IMAGES } from '../data/images';
 import { PARISH, MILESTONES, VALUES, MISSION, SACRAMENTS, MINISTRIES } from '../data/site';
 
@@ -167,9 +168,11 @@ function CommunitySection() {
             </p>
           </Reveal>
           <Reveal delay={0.18}>
-            <Link to="/contact" className="btn-maroon mt-9">
-              Get in Touch <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <Button variant="maroon" asChild className="mt-9">
+              <Link to="/contact">
+                Get in Touch <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
           </Reveal>
         </div>
       </div>
@@ -232,9 +235,11 @@ function Sacraments() {
             through every step.
           </p>
           <div className="mt-6 text-center">
-            <Link to="/contact" className="btn-maroon">
-              Contact Parish Office <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <Button variant="maroon" asChild>
+              <Link to="/contact">
+                Contact Parish Office <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
           </div>
         </Reveal>
       </div>

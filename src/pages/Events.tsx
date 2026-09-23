@@ -4,6 +4,7 @@ import { X, Clock, MapPin, CalendarDays, ArrowRight, Play } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
+import { Button } from '../components/ui/button';
 import { IMAGES } from '../data/images';
 import { PARISH, EVENTS, EVENT_CATEGORIES, FEAST_VIDEOS, PATRONAL_FEASTS, type ParishEvent, type EventCategory } from '../data/site';
 
@@ -113,9 +114,11 @@ function EventModal({ event, onClose }: { event: ParishEvent | null; onClose: ()
                   </div>
                 ))}
               </dl>
-              <a href={PARISH.phoneHref} className="btn-maroon mt-8 w-full">
-                Contact Parish Office <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </a>
+              <Button variant="maroon" asChild className="mt-8 w-full">
+                <a href={PARISH.phoneHref}>
+                  Contact Parish Office <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </Button>
             </div>
           </motion.div>
         </motion.div>

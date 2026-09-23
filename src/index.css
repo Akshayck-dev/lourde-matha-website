@@ -56,28 +56,6 @@ body {
   text-wrap: balance;
 }
 
-/* ---------- buttons ---------- */
-
-.btn {
-  @apply inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.18em] transition-all duration-300;
-}
-
-.btn-gold {
-  @apply btn bg-gold text-maroon-deep hover:bg-gold-light hover:shadow-soft;
-}
-
-.btn-outline {
-  @apply btn border border-ivory/40 text-ivory hover:border-gold-light hover:text-gold-light;
-}
-
-.btn-outline-dark {
-  @apply btn border border-maroon/25 text-maroon-deep hover:border-gold hover:bg-maroon hover:text-ivory;
-}
-
-.btn-maroon {
-  @apply btn bg-maroon text-ivory hover:bg-maroon-rich hover:shadow-soft;
-}
-
 /* ---------- image treatments ---------- */
 
 .img-frame {

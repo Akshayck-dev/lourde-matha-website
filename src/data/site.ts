@@ -22,10 +22,19 @@ export const PARISH = {
     'Kolapra–Thalayanadu Road, Thalayanadu P.O.',
     'Thodupuzha, Idukki, Kerala 685585',
   ],
+  // verified from the parish's Google Maps listing (shared 2026-09-23)
+  malayalamName: 'ലൂർദ് മാതാ പള്ളി',
+  plusCode: 'RQQF+WV4',
+  coordinates: { lat: 9.8397585, lng: 76.7747155 },
+  googleRating: { stars: 4.5, reviews: 76 },
+  amenities: 'Wheelchair-accessible parking · Restroom',
+  grotto: 'The Lourde Matha Grotto stands nearby — a quiet place for prayer.',
   // confirm: office hours with the parish office
   officeHours: 'Mon – Sat · 9:00 AM – 1:00 PM',
   mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=Lourde+Matha+Church+Thalayanadu+Thodupuzha+Kerala',
+    'https://www.google.com/maps/place/Lourde+Matha+Church,+Thalayanadu/@9.8397585,76.7747155,17z',
+  mapsEmbed:
+    'https://www.google.com/maps?q=9.8397585,76.7747155&z=17&output=embed',
 };
 
 /* ------------------------- Mass / Qurbana --------------------------- */

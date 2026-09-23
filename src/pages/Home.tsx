@@ -18,6 +18,9 @@ import {
   Users,
   HandHeart,
   Church,
+  Star,
+  Navigation,
+  Accessibility,
 } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
@@ -552,9 +555,7 @@ function Location() {
             <div className="relative h-full min-h-[380px] overflow-hidden border border-maroon/10 shadow-card">
               <iframe
                 title={`Map — ${PARISH.name}, ${PARISH.place}`}
-                src={`https://www.google.com/maps?q=${encodeURIComponent(
-                  'Lourde Matha Church Thalayanadu Thodupuzha Kerala'
-                )}&output=embed`}
+                src={PARISH.mapsEmbed}
                 className="absolute inset-0 h-full w-full grayscale-[35%] contrast-[1.02]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -564,9 +565,19 @@ function Location() {
 
           {/* details */}
           <Reveal delay={0.1} className="flex flex-col justify-center">
-            <ul className="divide-y divide-maroon/10">
+            <p className="font-display text-xl italic text-maroon-deep/70">
+              {PARISH.malayalamName}
+            </p>
+            <ul className="mt-2 divide-y divide-maroon/10">
               {[
                 { icon: MapPin, label: 'Address', value: PARISH.addressLines.join(', ') },
+                { icon: Navigation, label: 'Plus Code', value: PARISH.plusCode },
+                {
+                  icon: Star,
+                  label: 'Google Rating',
+                  value: `${PARISH.googleRating.stars} · ${PARISH.googleRating.reviews} reviews`,
+                  href: PARISH.mapsUrl,
+                },
                 { icon: Phone, label: 'Phone', value: PARISH.phone, href: PARISH.phoneHref },
                 { icon: Mail, label: 'Email', value: PARISH.email, href: `mailto:${PARISH.email}` },
                 { icon: Clock, label: 'Parish Office', value: PARISH.officeHours },
@@ -593,6 +604,12 @@ function Location() {
                 </li>
               ))}
             </ul>
+            <p className="mt-6 flex items-start gap-3 text-[15px] font-light leading-relaxed text-charcoal/70">
+              <Accessibility className="mt-0.5 h-5 w-5 shrink-0 text-gold-dark" strokeWidth={1.5} aria-hidden="true" />
+              <span>
+                {PARISH.amenities}. {PARISH.grotto}
+              </span>
+            </p>
             <a href={PARISH.mapsUrl} target="_blank" rel="noreferrer" className="btn-maroon mt-8 self-start">
               Get Directions <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </a>

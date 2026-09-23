@@ -171,9 +171,7 @@ export default function Contact() {
       <section className="relative h-[420px] bg-cream" aria-label="Parish location map">
         <iframe
           title={`Map — ${PARISH.name}, ${PARISH.place}`}
-          src={`https://www.google.com/maps?q=${encodeURIComponent(
-            'Lourde Matha Church Thalayanadu Thodupuzha Kerala'
-          )}&output=embed`}
+          src={PARISH.mapsEmbed}
           className="absolute inset-0 h-full w-full grayscale-[35%] contrast-[1.02]"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

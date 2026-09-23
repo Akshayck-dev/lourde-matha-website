@@ -156,7 +156,7 @@ export default function Events() {
                 type="button"
                 onClick={() => setFilter(cat)}
                 aria-pressed={filter === cat}
-                className={`px-6 py-2.5 text-[12px] font-medium uppercase tracking-[0.16em] transition-all duration-300 ${
+                className={`rounded-full px-6 py-2.5 text-[12px] font-medium uppercase tracking-[0.16em] transition-all duration-300 ${
                   filter === cat
                     ? 'bg-maroon text-ivory shadow-card'
                     : 'border border-maroon/20 text-maroon-deep/70 hover:border-gold hover:text-gold-dark'

@@ -10,11 +10,31 @@ import Gallery from './pages/Gallery';
 import Offerings from './pages/Offerings';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
+import { initLenis, destroyLenis, scrollToTop } from './lib/lenis';
+
+/** Buttery smooth scrolling (Lenis) for the whole site. */
+function SmoothScroll() {
+  useEffect(() => {
+    const lenis = initLenis();
+    if (!lenis) return;
+    let raf = 0;
+    const loop = (time: number) => {
+      lenis.raf(time);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => {
+      cancelAnimationFrame(raf);
+      destroyLenis();
+    };
+  }, []);
+  return null;
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, [pathname]);
   return null;
 }
@@ -22,6 +42,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <BrowserRouter>
+      <SmoothScroll />
       <ScrollToTop />
       <Navbar />
       <Routes>

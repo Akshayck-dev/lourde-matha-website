@@ -1,0 +1,37 @@
+import { chromium } from 'playwright-core';
+const EXE = process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell';
+const b = await chromium.launch({ executablePath: EXE });
+const errs = [];
+// desktop: contact mid + home story
+const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
+let p = await ctx.newPage();
+p.on('pageerror', e => errs.push(e.message));
+await p.goto('http://localhost:4173/contact', { waitUntil: 'networkidle' });
+await p.waitForTimeout(1000);
+await p.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.3));
+await p.waitForTimeout(1500);
+await p.screenshot({ path: '/tmp/polish2-contact.png' });
+await p.close();
+p = await ctx.newPage();
+await p.goto('http://localhost:4173/', { waitUntil: 'networkidle' });
+await p.waitForTimeout(1000);
+await p.evaluate(() => document.querySelector('section:nth-of-type(1)') && window.scrollTo(0, document.body.scrollHeight * 0.32));
+await p.waitForTimeout(1800);
+await p.screenshot({ path: '/tmp/polish2-story.png' });
+await p.close();
+await ctx.close();
+// mobile: home hero + fullscreen menu
+const mctx = await b.newContext({ viewport: { width: 390, height: 844 } });
+const m = await mctx.newPage();
+m.on('pageerror', e => errs.push('mobile: ' + e.message));
+await m.goto('http://localhost:4173/', { waitUntil: 'networkidle' });
+await m.waitForTimeout(1200);
+await m.screenshot({ path: '/tmp/polish2-mobile-hero.png' });
+await m.click('button[aria-label="Open menu"]');
+await m.waitForTimeout(900);
+await m.screenshot({ path: '/tmp/polish2-mobile-menu.png' });
+const overflow = await m.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+console.log('mobile h-overflow:', overflow);
+await m.close();
+console.log('ERRORS:', JSON.stringify(errs));
+await b.close();

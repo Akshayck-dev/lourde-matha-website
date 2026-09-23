@@ -1,0 +1,20 @@
+import { chromium } from 'playwright-core';
+const EXE = process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell';
+const b = await chromium.launch({ executablePath: EXE });
+const m = await (await b.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+const errs = [];
+m.on('pageerror', e => errs.push(e.message));
+await m.goto('http://localhost:4173/', { waitUntil: 'networkidle' });
+await m.waitForTimeout(1000);
+const h = await m.evaluate(() => document.body.scrollHeight);
+for (let y = 0; y < h; y += 600) { await m.evaluate((yy) => window.scrollTo(0, yy), y); await m.waitForTimeout(100); }
+await m.waitForTimeout(1000);
+await m.screenshot({ path: '/tmp/polish2-location-m.png' });
+const d = await (await b.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
+await d.goto('http://localhost:4173/', { waitUntil: 'networkidle' });
+await d.waitForTimeout(1000);
+await d.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.30));
+await d.waitForTimeout(1800);
+await d.screenshot({ path: '/tmp/polish2-story-d.png' });
+console.log('ERRORS:', JSON.stringify(errs));
+await b.close();

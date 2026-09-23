@@ -103,7 +103,10 @@ export default function Contact() {
     { icon: MapPin, label: 'Address', value: PARISH.addressLines.join(', ') },
     { icon: Phone, label: 'Phone', value: PARISH.phone, href: PARISH.phoneHref },
     { icon: Mail, label: 'Email', value: PARISH.email, href: `mailto:${PARISH.email}` },
-    { icon: Clock, label: 'Parish Office Hours', value: PARISH.officeHours },
+    // office hours render only once confirmed with the parish office
+    ...(PARISH.officeHours
+      ? [{ icon: Clock, label: 'Parish Office Hours', value: PARISH.officeHours }]
+      : []),
   ];
 
   return (
@@ -135,12 +138,12 @@ export default function Contact() {
                         {href ? (
                           <a
                             href={href}
-                            className="mt-1 block font-display text-[22px] leading-snug text-maroon-deep transition-colors hover:text-gold-dark"
+                            className="mt-1 block break-all font-display text-[22px] leading-snug text-maroon-deep transition-colors hover:text-gold-dark"
                           >
                             {value}
                           </a>
                         ) : (
-                          <span className="mt-1 block font-display text-[22px] leading-snug text-maroon-deep">
+                          <span className="mt-1 block break-all font-display text-[22px] leading-snug text-maroon-deep">
                             {value}
                           </span>
                         )}

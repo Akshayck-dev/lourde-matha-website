@@ -1,0 +1,16 @@
+import { chromium } from 'playwright-core';
+const EXE = process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell';
+const b = await chromium.launch({ executablePath: EXE });
+const d = await (await b.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
+await d.goto('http://localhost:4173/', { waitUntil: 'networkidle' });
+await d.waitForTimeout(800);
+await d.evaluate(() => [...document.querySelectorAll('h2')].find(h => h.textContent.includes('Ninety Years')).scrollIntoView({ block: 'center' }));
+await d.waitForTimeout(1800);
+await d.screenshot({ path: '/tmp/polish3-story.png' });
+const m = await (await b.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+await m.goto('http://localhost:4173/', { waitUntil: 'networkidle' });
+await m.waitForTimeout(800);
+await m.evaluate(() => [...document.querySelectorAll('h2')].find(h => h.textContent.includes('Visit Our Parish')).scrollIntoView({ block: 'start' }));
+await m.waitForTimeout(1800);
+await m.screenshot({ path: '/tmp/polish3-location-m.png' });
+await b.close();

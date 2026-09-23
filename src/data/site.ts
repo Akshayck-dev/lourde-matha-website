@@ -29,8 +29,8 @@ export const PARISH = {
   googleRating: { stars: 4.5, reviews: 76 },
   amenities: 'Wheelchair-accessible parking · Restroom',
   grotto: 'The Lourde Matha Grotto stands nearby — a quiet place for prayer.',
-  // confirm: office hours with the parish office
-  officeHours: 'Mon – Sat · 9:00 AM – 1:00 PM',
+  // confirm: office hours with the parish office (do not invent — footer shows 'Parish Office' until confirmed)
+  officeHours: '',
   mapsUrl:
     'https://www.google.com/maps/place/Lourde+Matha+Church,+Thalayanadu/@9.8397585,76.7747155,17z',
   mapsEmbed:

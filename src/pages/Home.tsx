@@ -337,7 +337,7 @@ function Story() {
       <motion.div style={{ y: bgY }} className="absolute inset-0" aria-hidden="true">
         <img src={IMAGES['story-wide']} alt="" className="h-[124%] w-full object-cover" loading="lazy" />
       </motion.div>
-      <div className="absolute inset-0 bg-maroon-deep/62" aria-hidden="true" />
+      <div className="absolute inset-0 bg-maroon-deep/70" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-b from-maroon-deep/70 via-transparent to-maroon-deep/70" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
@@ -349,7 +349,7 @@ function Story() {
             <span className="italic text-gold-light">in Thalayanadu</span>
           </h2>
           <div className="gold-rule mt-7" aria-hidden="true" />
-          <p className="mx-auto mt-7 max-w-2xl text-[17px] font-light leading-relaxed text-ivory/78">
+          <p className="mx-auto mt-7 max-w-2xl text-[17px] font-light leading-relaxed text-ivory/90">
             What began in 1935 as a small community of faithful has grown into a living
             sanctuary — where the Syro-Malabar liturgy is sung with devotion, and every
             generation finds its home beneath these arches.
@@ -551,7 +551,7 @@ function Location() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {/* map */}
-          <Reveal className="min-h-[380px]">
+          <Reveal className="min-h-[380px] min-w-0">
             <div className="relative h-full min-h-[380px] overflow-hidden border border-maroon/10 shadow-card">
               <iframe
                 title={`Map — ${PARISH.name}, ${PARISH.place}`}
@@ -564,7 +564,7 @@ function Location() {
           </Reveal>
 
           {/* details */}
-          <Reveal delay={0.1} className="flex flex-col justify-center">
+          <Reveal delay={0.1} className="flex min-w-0 flex-col justify-center">
             <p className="font-malayalam text-xl text-maroon-deep/80">
               {PARISH.malayalamName}
             </p>
@@ -580,7 +580,10 @@ function Location() {
                 },
                 { icon: Phone, label: 'Phone', value: PARISH.phone, href: PARISH.phoneHref },
                 { icon: Mail, label: 'Email', value: PARISH.email, href: `mailto:${PARISH.email}` },
-                { icon: Clock, label: 'Parish Office', value: PARISH.officeHours },
+                // parish office hours render only once confirmed with the parish office
+                ...(PARISH.officeHours
+                  ? [{ icon: Clock, label: 'Parish Office Hours', value: PARISH.officeHours }]
+                  : []),
               ].map(({ icon: Icon, label, value, href }) => (
                 <li key={label} className="flex items-start gap-5 py-5">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-gold/50 text-gold-dark">
@@ -593,12 +596,12 @@ function Location() {
                     {href ? (
                       <a
                         href={href}
-                        className="mt-1 block font-display text-[22px] text-maroon-deep transition-colors hover:text-gold-dark"
+                        className="mt-1 block break-all font-display text-[22px] text-maroon-deep transition-colors hover:text-gold-dark"
                       >
                         {value}
                       </a>
                     ) : (
-                      <span className="mt-1 block font-display text-[22px] text-maroon-deep">{value}</span>
+                      <span className="mt-1 block break-all font-display text-[22px] text-maroon-deep">{value}</span>
                     )}
                   </span>
                 </li>

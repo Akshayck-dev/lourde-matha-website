@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import { PARISH, NAV_LINKS, MASS_SCHEDULE } from '../data/site';
 import { Logo } from './Logo';
 import Reveal from './Reveal';
@@ -132,10 +132,6 @@ export default function Footer() {
                   <Mail className="mt-0.5 h-[18px] w-[18px] shrink-0 text-gold" strokeWidth={1.5} aria-hidden="true" />
                   {PARISH.email}
                 </a>
-              </li>
-              <li className="flex gap-3">
-                <Clock className="mt-0.5 h-[18px] w-[18px] shrink-0 text-gold" strokeWidth={1.5} aria-hidden="true" />
-                {PARISH.officeHours}
               </li>
             </ul>
           </Reveal>

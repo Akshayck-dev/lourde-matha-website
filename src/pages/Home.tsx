@@ -40,15 +40,23 @@ function Hero() {
 
   return (
     <section ref={ref} className="relative flex min-h-svh items-center overflow-hidden bg-maroon-deep">
-      {/* background with slow cinematic zoom + parallax */}
+      {/* background with slow cinematic zoom + parallax — desktop & mobile crops */}
       <motion.div style={{ y: bgY }} className="absolute inset-0" aria-hidden="true">
         <motion.img
-          src={IMAGES['hero-church']}
+          src={IMAGES['hero-lourdes-desktop']}
           alt=""
           initial={{ scale: 1.12 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2.4, ease }}
-          className="h-[115%] w-full object-cover"
+          className="hidden h-[115%] w-full object-cover md:block"
+        />
+        <motion.img
+          src={IMAGES['hero-lourdes-mobile']}
+          alt=""
+          initial={{ scale: 1.12 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2.4, ease }}
+          className="h-[115%] w-full object-cover md:hidden"
         />
       </motion.div>
       <div

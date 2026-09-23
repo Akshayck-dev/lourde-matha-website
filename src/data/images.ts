@@ -2,7 +2,8 @@
    the site. Swap any file in src/assets/images/ with real parish photos
    (keeping the same filename) and the whole site updates automatically. */
 
-import heroChurch from '../assets/images/hero-church.jpg';
+import heroLourdesDesktop from '../assets/images/hero-lourdes-desktop.jpg';
+import heroLourdesMobile from '../assets/images/hero-lourdes-mobile.jpg';
 import interiorNave from '../assets/images/interior-nave.jpg';
 import welcomeFacade from '../assets/images/welcome-facade.jpg';
 import storyWide from '../assets/images/story-wide.jpg';
@@ -22,7 +23,8 @@ import massTimingsBg from '../assets/images/mass-timings-bg.jpg';
 import videoPerunnal2026Day1 from '../assets/images/video-perunnal-2026-day1.jpg';
 
 export const IMAGES: Record<string, string> = {
-  'hero-church': heroChurch,
+  'hero-lourdes-desktop': heroLourdesDesktop,
+  'hero-lourdes-mobile': heroLourdesMobile,
   'interior-nave': interiorNave,
   'welcome-facade': welcomeFacade,
   'story-wide': storyWide,

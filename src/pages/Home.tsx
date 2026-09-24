@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
+import { useAutoSlider } from '../components/useAutoSlider';
 
 import {
   motion,
@@ -293,6 +294,7 @@ const PARISH_LIFE = [
 ];
 
 function ParishLife() {
+  const sliderRef = useAutoSlider<HTMLDivElement>();
   return (
     <section className="bg-cream/60 py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -302,9 +304,9 @@ function ParishLife() {
           description="Four pillars hold up everything we are — worship, sacrament, fellowship and prayer."
         />
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div ref={sliderRef} className="mt-10 flex snap-x gap-5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-4">
           {PARISH_LIFE.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.08} className="h-full">
+            <Reveal key={item.title} delay={i * 0.08} className="h-full w-[80%] shrink-0 snap-start sm:w-[62%] md:w-auto">
               <Link
                 to="/about"
                 className="group relative block h-[420px] overflow-hidden rounded-3xl bg-maroon-deep"

@@ -16,6 +16,7 @@ import {
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
+import { useAutoSlider } from '../components/useAutoSlider';
 import { Button } from '../components/ui/button';
 import { IMAGES } from '../data/images';
 import { PARISH, MILESTONES, VALUES, MISSION, SACRAMENTS, MINISTRIES } from '../data/site';
@@ -81,6 +82,7 @@ function Mission() {
 }
 
 function Values() {
+  const sliderRef = useAutoSlider<HTMLDivElement>();
   return (
     <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -88,9 +90,9 @@ function Values() {
           eyebrow="What we hold dear"
           title="Our Values"
         />
-        <div className="mt-10 grid gap-px bg-maroon/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div ref={sliderRef} className="mt-10 flex snap-x gap-5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:gap-px md:bg-maroon/10 lg:grid-cols-4">
           {VALUES.map((v, i) => (
-            <Reveal key={v.title} delay={i * 0.07} className="h-full">
+            <Reveal key={v.title} delay={i * 0.07} className="h-full w-[80%] shrink-0 snap-start sm:w-[62%] md:w-auto">
               <div className="group h-full rounded-3xl bg-ivory p-9 transition-colors duration-500 hover:bg-maroon-deep">
                 <p className="font-display text-lg italic text-gold-dark transition-colors group-hover:text-gold-light">
                   0{i + 1}
@@ -201,6 +203,7 @@ export default function About() {
 }
 
 function Sacraments() {
+  const sliderRef = useAutoSlider<HTMLDivElement>();
   return (
     <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -209,11 +212,11 @@ function Sacraments() {
           title="Sacraments"
           description="From baptism to matrimony — the sacred moments of Christian life, celebrated in the Syro-Malabar tradition."
         />
-        <div className="mt-10 grid gap-px bg-maroon/10 sm:grid-cols-2 lg:grid-cols-3">
+        <div ref={sliderRef} className="mt-10 flex snap-x gap-5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:gap-px md:bg-maroon/10 lg:grid-cols-3">
           {SACRAMENTS.map((s, i) => {
             const Icon = SACRAMENT_ICONS[i % SACRAMENT_ICONS.length];
             return (
-              <Reveal key={s.name} delay={(i % 3) * 0.07} className="h-full">
+              <Reveal key={s.name} delay={(i % 3) * 0.07} className="h-full w-[80%] shrink-0 snap-start sm:w-[62%] md:w-auto">
                 <div className="group h-full rounded-3xl bg-ivory p-9 transition-colors duration-500 hover:bg-maroon-deep">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 text-gold-dark transition-colors duration-500 group-hover:border-gold/60 group-hover:text-gold-light">
                     <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
@@ -248,6 +251,7 @@ function Sacraments() {
 }
 
 function Ministries() {
+  const sliderRef = useAutoSlider<HTMLDivElement>();
   return (
     <section className="bg-maroon-deep py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -257,11 +261,11 @@ function Ministries() {
           title="Ministries & Groups"
           description="The life of our parish is carried by its people — there is a place for every gift here."
         />
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div ref={sliderRef} className="mt-10 flex snap-x gap-5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {MINISTRIES.map((m, i) => {
             const Icon = MINISTRY_ICONS[i % MINISTRY_ICONS.length];
             return (
-              <Reveal key={m.name} delay={(i % 3) * 0.07}>
+              <Reveal key={m.name} delay={(i % 3) * 0.07} className="w-[80%] shrink-0 snap-start sm:w-[62%] md:w-auto">
                 <div className="h-full rounded-3xl border border-gold/25 bg-maroon-rich/40 p-9 transition-colors duration-500 hover:border-gold/60">
                   <Icon className="h-7 w-7 text-gold-light" strokeWidth={1.5} aria-hidden="true" />
                   <h3 className="mt-5 font-display text-2xl font-medium text-ivory">{m.name}</h3>

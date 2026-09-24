@@ -4,6 +4,7 @@ import { X, Clock, MapPin, CalendarDays, ArrowRight, Play } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
+import { useAutoSlider } from '../components/useAutoSlider';
 import { Button } from '../components/ui/button';
 import { IMAGES } from '../data/images';
 import { PARISH, EVENTS, EVENT_CATEGORIES, FEAST_VIDEOS, PATRONAL_FEASTS, type ParishEvent, type EventCategory } from '../data/site';
@@ -128,6 +129,7 @@ function EventModal({ event, onClose }: { event: ParishEvent | null; onClose: ()
 }
 
 export default function Events() {
+  const sliderRef = useAutoSlider<HTMLDivElement>();
   const [filter, setFilter] = useState<'All' | EventCategory>('All');
   const [selected, setSelected] = useState<ParishEvent | null>(null);
 
@@ -168,7 +170,7 @@ export default function Events() {
           </Reveal>
 
           {/* event list */}
-          <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div ref={sliderRef} className="mt-8 flex snap-x gap-5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             <AnimatePresence mode="popLayout">
               {filtered.map((event) => (
                 <motion.article
@@ -178,7 +180,7 @@ export default function Events() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="group flex flex-col overflow-hidden rounded-3xl bg-white/70 shadow-card transition-shadow duration-500 hover:shadow-soft"
+                  className="group flex flex-col overflow-hidden rounded-3xl bg-white/70 shadow-card transition-shadow duration-500 hover:shadow-soft w-[80%] shrink-0 snap-start sm:w-[62%] md:w-auto"
                 >
                   <button
                     type="button"

@@ -10,35 +10,35 @@ export default function Footer() {
 
   return (
     <footer className="bg-maroon-deep text-ivory">
-      {/* tri-band contact strip */}
+      {/* tri-band contact strip — coral / orange / amber */}
       <div className="grid md:grid-cols-3">
         <a
           href={PARISH.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-col items-center bg-maroon-deep px-6 py-10 text-center text-ivory transition-colors duration-300 hover:bg-maroon-rich"
+          className="group flex flex-col items-center bg-accent-coral px-6 py-10 text-center text-white transition-colors duration-300 hover:bg-[#d34553]"
         >
-          <MapPin className="h-8 w-8 text-gold-light transition-transform duration-300 group-hover:-translate-y-1" strokeWidth={1.25} aria-hidden="true" />
-          <p className="mt-4 text-[12px] font-semibold uppercase tracking-[0.24em]">Location</p>
-          <p className="mt-2 max-w-xs text-[14.5px] font-light leading-relaxed text-ivory/75">
+          <MapPin className="h-8 w-8 text-white transition-transform duration-300 group-hover:-translate-y-1" strokeWidth={1.25} aria-hidden="true" />
+          <p className="mt-4 text-[12px] font-bold uppercase tracking-[0.24em]">Location</p>
+          <p className="mt-2 max-w-xs text-[14.5px] leading-relaxed text-white/85">
             {PARISH.addressLines.join(', ')}
           </p>
         </a>
         <a
           href={PARISH.phoneHref}
-          className="group flex flex-col items-center bg-maroon px-6 py-10 text-center text-ivory transition-colors duration-300 hover:bg-maroon-rich"
+          className="group flex flex-col items-center bg-gold px-6 py-10 text-center text-white transition-colors duration-300 hover:bg-gold-dark"
         >
-          <Phone className="h-8 w-8 text-gold-light transition-transform duration-300 group-hover:-translate-y-1" strokeWidth={1.25} aria-hidden="true" />
-          <p className="mt-4 text-[12px] font-semibold uppercase tracking-[0.24em]">Phone</p>
-          <p className="mt-2 text-[15px] font-light tracking-wide text-ivory/85">{PARISH.phone}</p>
+          <Phone className="h-8 w-8 text-white transition-transform duration-300 group-hover:-translate-y-1" strokeWidth={1.25} aria-hidden="true" />
+          <p className="mt-4 text-[12px] font-bold uppercase tracking-[0.24em]">Phone</p>
+          <p className="mt-2 text-[15px] tracking-wide text-white/90">{PARISH.phone}</p>
         </a>
         <a
           href={`mailto:${PARISH.email}`}
-          className="group flex flex-col items-center bg-gold px-6 py-10 text-center text-maroon-deep transition-colors duration-300 hover:bg-gold-light"
+          className="group flex flex-col items-center bg-accent-amber px-6 py-10 text-center text-maroon-deep transition-colors duration-300 hover:bg-[#ffc93c]"
         >
           <Mail className="h-8 w-8 transition-transform duration-300 group-hover:-translate-y-1" strokeWidth={1.25} aria-hidden="true" />
-          <p className="mt-4 text-[12px] font-semibold uppercase tracking-[0.24em]">Email</p>
-          <p className="mt-2 break-all text-[14.5px] font-light">{PARISH.email}</p>
+          <p className="mt-4 text-[12px] font-bold uppercase tracking-[0.24em]">Email</p>
+          <p className="mt-2 break-all text-[14.5px]">{PARISH.email}</p>
         </a>
       </div>
 
@@ -64,7 +64,7 @@ export default function Footer() {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-ivory/15 text-ivory/70 transition-all duration-300 hover:border-gold hover:text-gold-light"
+                  className="flex h-10 w-10 items-center justify-center border border-ivory/15 text-ivory/70 transition-colors duration-300 hover:border-accent-cyan hover:text-accent-cyan"
                 >
                   <Icon className="h-[18px] w-[18px]" />
                 </a>

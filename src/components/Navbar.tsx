@@ -40,17 +40,12 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const solid = scrolled || open;
-  // Floating pill nav once the user scrolls past the hero
-  const floating = scrolled && !open;
 
   return (
     <>
-      <div
-        className={`fixed z-50 transition-all duration-500 ${
-          floating ? 'inset-x-0 top-3 flex justify-center px-4 sm:top-4' : 'inset-x-0 top-0'
-        }`}
-      >
-      {!floating && (
+      <div className="fixed inset-x-0 top-0 z-50">
+      {/* utility bar — hidden once scrolled, like the reference */}
+      {!solid && (
         <div className="hidden bg-maroon-deep md:block">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-2 md:px-8">
             <p className="truncate text-[11px] font-light uppercase tracking-[0.16em] text-ivory/65">
@@ -78,7 +73,7 @@ export default function Navbar() {
               </span>
               <Link
                 to="/offerings"
-                className="rounded-full bg-gold px-5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-maroon-deep transition-colors duration-300 hover:bg-gold-light"
+                className="bg-accent-cyan px-5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:bg-maroon-deep"
               >
                 Donate
               </Link>
@@ -90,19 +85,15 @@ export default function Navbar() {
         initial={{ y: -70, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className={`transition-all duration-500 ${
-          floating
-            ? 'w-full max-w-6xl rounded-full border border-maroon/10 bg-ivory/90 shadow-card backdrop-blur-md'
-            : solid
-              ? 'w-full bg-ivory/90 shadow-card backdrop-blur-md'
-              : 'w-full bg-gradient-to-b from-black/45 to-transparent'
+        className={`w-full transition-all duration-500 ${
+          solid
+            ? 'bg-ivory shadow-card'
+            : 'bg-gradient-to-b from-black/45 to-transparent'
         }`}
       >
         <nav
-          className={`mx-auto flex items-center justify-between transition-all duration-500 ${
-            floating
-              ? 'max-w-6xl px-5 py-3 md:px-7'
-              : 'max-w-7xl px-5 md:px-8 ' + (solid ? 'py-3' : 'py-5')
+          className={`mx-auto flex w-full max-w-7xl items-center justify-between px-5 transition-all duration-500 md:px-8 ${
+            solid ? 'py-3' : 'py-5'
           }`}
           aria-label="Primary"
         >
@@ -149,7 +140,6 @@ export default function Navbar() {
               variant={solid ? 'maroon' : 'gold'}
               size="sm"
               asChild
-              className={solid ? undefined : 'bg-gold/95'}
             >
               <Link to="/contact">
                 Visit Us <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

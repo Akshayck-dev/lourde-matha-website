@@ -39,7 +39,7 @@ export default function PageHero({ eyebrow, title, description, image }: PageHer
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-4 max-w-3xl font-display text-5xl font-medium leading-[1.05] text-ivory md:text-6xl"
+          className="mt-4 max-w-3xl font-display text-5xl font-extrabold uppercase leading-[1.05] tracking-tight text-ivory md:text-6xl"
         >
           {title}
         </motion.h1>

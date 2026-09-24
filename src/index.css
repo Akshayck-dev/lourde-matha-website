@@ -29,58 +29,58 @@ body {
 }
 
 ::selection {
-  background: #c9a227;
-  color: #0c4a6e;
+  background: #f99740;
+  color: #171b2d;
 }
 
-/* ---------- editorial primitives ---------- */
+/* ---------- editorial primitives (reference-site style) ---------- */
 
 .eyebrow {
-  @apply font-sans text-[11px] font-medium uppercase tracking-luxe text-gold-dark;
+  @apply font-display text-[12px] font-bold uppercase tracking-luxe text-maroon-deep;
 }
 
 .eyebrow-light {
-  @apply font-sans text-[11px] font-medium uppercase tracking-luxe text-gold-light;
+  @apply font-display text-[12px] font-bold uppercase tracking-luxe text-ivory/70;
 }
 
 .gold-rule {
-  @apply mx-auto h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent;
+  @apply mx-auto h-px w-16 bg-gold;
 }
 
 .gold-rule-left {
-  @apply h-px w-16 bg-gradient-to-r from-gold to-transparent;
+  @apply h-px w-16 bg-gold;
 }
 
 .display-heading {
-  @apply font-display font-medium leading-[1.08] text-maroon-deep;
+  @apply font-display font-extrabold uppercase leading-[1.1] tracking-tight text-maroon-deep;
   text-wrap: balance;
 }
 
 /* ---------- image treatments ---------- */
 
 .img-frame {
-  @apply overflow-hidden rounded-2xl bg-cream;
+  @apply overflow-hidden bg-cream;
 }
 
 .img-frame img {
-  @apply h-full w-full object-cover transition-transform duration-[1.4s] ease-out;
+  @apply h-full w-full object-cover transition-transform duration-[1.2s] ease-out;
 }
 
 .img-frame:hover img {
-  @apply scale-[1.045];
+  @apply scale-[1.04];
 }
 
-/* thin elegant scrollbar */
+/* thin scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #f0f9ff;
+  background: #f2f2f2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a227;
-  border: 2px solid #f0f9ff;
+  background: #f99740;
+  border: 2px solid #f2f2f2;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9a7b1b;
+  background: #d97b1f;
 }

@@ -4,24 +4,31 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '../../lib/utils';
 
+/* Reference-site style: sharp corners, 2px outlines, uppercase Montserrat, flat. */
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full font-display text-[13px] font-medium uppercase tracking-[0.18em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98] [&_svg]:size-4 [&_svg]:shrink-0',
+  'inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-[3px] font-display text-[12px] font-bold uppercase tracking-[0.18em] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 disabled:pointer-events-none disabled:opacity-50 active:translate-y-px [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        gold: 'bg-gold text-maroon-deep shadow-[0_2px_14px_rgba(176,141,58,0.28)] hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-[0_12px_30px_rgba(176,141,58,0.4)]',
+        gold: 'border-2 border-gold bg-transparent text-gold hover:bg-gold hover:text-white',
+        goldSolid:
+          'border-2 border-gold bg-gold text-white hover:border-gold-dark hover:bg-gold-dark',
         maroon:
-          'bg-maroon text-ivory shadow-[0_2px_14px_rgba(3,105,161,0.28)] hover:-translate-y-0.5 hover:bg-maroon-rich hover:shadow-[0_12px_30px_rgba(3,105,161,0.4)]',
+          'border-2 border-maroon-deep bg-maroon-deep text-ivory hover:border-maroon hover:bg-maroon',
+        accent:
+          'border-2 border-accent-cyan bg-accent-cyan text-white hover:border-maroon-deep hover:bg-maroon-deep',
         outline:
-          'border border-ivory/40 text-ivory hover:-translate-y-0.5 hover:border-gold-light hover:text-gold-light hover:shadow-[0_12px_30px_rgba(0,0,0,0.35)]',
+          'border-2 border-ivory/70 text-ivory hover:border-ivory hover:bg-ivory hover:text-maroon-deep',
         outlineDark:
-          'border border-maroon/25 text-maroon-deep hover:-translate-y-0.5 hover:border-gold hover:bg-maroon hover:text-ivory hover:shadow-soft',
+          'border-2 border-maroon-deep/30 text-maroon-deep hover:border-gold hover:bg-gold hover:text-white',
+        white:
+          'border-2 border-ivory bg-ivory text-maroon-deep hover:border-ivory hover:bg-transparent hover:text-ivory',
         ghost: 'text-maroon-deep hover:bg-maroon/5',
       },
       size: {
         default: 'h-12 px-8',
-        sm: 'h-10 px-6 text-xs',
-        lg: 'h-14 px-10 text-sm',
+        sm: 'h-10 px-6',
+        lg: 'h-14 px-10 text-[13px]',
         icon: 'h-11 w-11',
       },
     },

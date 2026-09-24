@@ -4,35 +4,42 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Theme: sky blue + white (token names kept for compatibility)
+        // Theme: reference-site UI — navy / coral / orange / amber / cyan (token names kept for compatibility)
         maroon: {
-          DEFAULT: '#0369A1',
-          deep: '#0C4A6E',
-          rich: '#0284C7',
-          soft: '#0EA5E9',
+          DEFAULT: '#232A45',
+          deep: '#171B2D',
+          rich: '#2E3657',
+          soft: '#3C3950',
         },
         gold: {
-          DEFAULT: '#C9A227',
-          light: '#E7C66A',
-          pale: '#F3E5BC',
-          dark: '#9A7B1B',
+          DEFAULT: '#F99740',
+          light: '#FFB25E',
+          pale: '#FFE9D1',
+          dark: '#D97B1F',
+        },
+        accent: {
+          coral: '#E15260',
+          amber: '#FFCD54',
+          cyan: '#00B7CD',
+          teal: '#40BABD',
+          blue: '#34A2D9',
         },
         ivory: '#FFFFFF',
-        cream: '#F0F9FF',
-        sand: '#E0F2FE',
-        charcoal: '#222222',
+        cream: '#F2F2F2',
+        sand: '#F1F2F4',
+        charcoal: '#3B3B3B',
       },
       fontFamily: {
-        display: ['Lora', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        malayalam: ['"Noto Serif Malayalam"', 'Lora', 'Georgia', 'serif'],
+        display: ['Montserrat', 'system-ui', 'sans-serif'],
+        sans: ['"Source Sans 3"', 'system-ui', '-apple-system', 'sans-serif'],
+        malayalam: ['"Noto Serif Malayalam"', 'Georgia', 'serif'],
       },
       letterSpacing: {
-        luxe: '0.32em',
+        luxe: '0.22em',
       },
       boxShadow: {
-        soft: '0 24px 60px -24px rgba(12, 74, 110, 0.25)',
-        card: '0 12px 40px -16px rgba(12, 74, 110, 0.18)',
+        soft: '0 8px 28px -12px rgba(23,27,45,0.18)',
+        card: '0 4px 18px -6px rgba(23,27,45,0.12)',
       },
     },
   },

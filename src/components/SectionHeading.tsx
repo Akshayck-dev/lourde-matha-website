@@ -9,7 +9,7 @@ interface SectionHeadingProps {
   dark?: boolean;
 }
 
-/** Editorial section heading: small gold eyebrow, serif title, hairline rule. */
+/** Reference-site section heading: bold uppercase eyebrow, Montserrat extrabold title. */
 export default function SectionHeading({
   eyebrow,
   title,
@@ -28,10 +28,10 @@ export default function SectionHeading({
       >
         {title}
       </h2>
-      <div className={`mt-6 ${centered ? 'gold-rule' : 'gold-rule-left'}`} aria-hidden="true" />
+      <div className={`mt-6 bg-gold ${centered ? 'gold-rule' : 'gold-rule-left'}`} aria-hidden="true" />
       {description && (
         <p
-          className={`mt-6 max-w-2xl text-[17px] font-light leading-relaxed ${
+          className={`mt-6 max-w-2xl text-[16.5px] leading-relaxed ${
             dark ? 'text-ivory/70' : 'text-charcoal/70'
           } ${centered ? 'mx-auto' : ''}`}
         >

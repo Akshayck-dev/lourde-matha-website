@@ -87,7 +87,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Lightbo
               <img
                 src={current.src}
                 alt={current.caption}
-                className="max-h-[72vh] w-auto max-w-full rounded-2xl object-contain shadow-soft"
+                className="max-h-[72vh] w-auto max-w-full rounded-none object-contain shadow-soft"
               />
               <figcaption className="mt-4 text-center">
                 <span className="font-display text-2xl italic text-ivory">{current.caption}</span>

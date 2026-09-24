@@ -71,9 +71,9 @@ export default function Offerings() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-gold/40 bg-ivory p-8 shadow-soft md:p-10">
+            <div className="mx-auto mt-8 max-w-2xl rounded-none border border-gold/40 bg-ivory p-8 shadow-soft md:p-10">
               <div className="mb-8 flex items-center justify-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/60 text-gold-dark">
+                <span className="flex h-12 w-12 items-center justify-center rounded-none border border-gold/60 text-gold-dark">
                   <Landmark className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
                 </span>
                 <p className="font-display text-2xl font-medium text-maroon-deep">

@@ -22,7 +22,7 @@ function Feasts() {
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           {PATRONAL_FEASTS.map((feast, i) => (
             <Reveal key={feast.name} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col rounded-3xl border border-gold/25 bg-maroon-rich/40 p-10 transition-colors duration-500 hover:border-gold/60 md:p-12">
+              <div className="flex h-full flex-col rounded-none border border-gold/25 bg-maroon-rich/40 p-10 transition-colors duration-500 hover:border-gold/60 md:p-12">
                 <p className="text-[11px] font-medium uppercase tracking-luxe text-gold-light/80">
                   {feast.date}
                 </p>
@@ -77,7 +77,7 @@ function EventModal({ event, onClose }: { event: ParishEvent | null; onClose: ()
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-ivory shadow-soft"
+            className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-none bg-ivory shadow-soft"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative h-60 md:h-72">
@@ -105,7 +105,7 @@ function EventModal({ event, onClose }: { event: ParishEvent | null; onClose: ()
                   { icon: MapPin, label: 'Location', value: event.location },
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-center gap-4">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/50 text-gold-dark">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-none border border-gold/50 text-gold-dark">
                       <Icon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                     </span>
                     <div>
@@ -158,7 +158,7 @@ export default function Events() {
                 type="button"
                 onClick={() => setFilter(cat)}
                 aria-pressed={filter === cat}
-                className={`rounded-full px-6 py-2.5 text-[12px] font-medium uppercase tracking-[0.16em] transition-all duration-300 ${
+                className={`rounded-none px-6 py-2.5 text-[12px] font-medium uppercase tracking-[0.16em] transition-all duration-300 ${
                   filter === cat
                     ? 'bg-maroon text-ivory shadow-card'
                     : 'border border-maroon/20 text-maroon-deep/70 hover:border-gold hover:text-gold-dark'
@@ -180,7 +180,7 @@ export default function Events() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="group flex flex-col overflow-hidden rounded-3xl bg-white/70 shadow-card transition-shadow duration-500 hover:shadow-soft w-[80%] shrink-0 snap-start sm:w-[62%] md:w-auto"
+                  className="group flex flex-col overflow-hidden rounded-none bg-white/70 shadow-card transition-shadow duration-500 hover:shadow-soft w-[80%] shrink-0 snap-start sm:w-[62%] md:w-auto"
                 >
                   <button
                     type="button"
@@ -257,7 +257,7 @@ export default function Events() {
                   href={video.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block overflow-hidden rounded-3xl bg-maroon/40 ring-1 ring-gold/25 transition-all duration-300 hover:-translate-y-1 hover:ring-gold/60"
+                  className="group block overflow-hidden rounded-none bg-maroon/40 ring-1 ring-gold/25 transition-all duration-300 hover:-translate-y-1 hover:ring-gold/60"
                   aria-label={`Watch on YouTube: ${video.title}`}
                 >
                   <div className="relative aspect-video overflow-hidden">
@@ -272,7 +272,7 @@ export default function Events() {
                       aria-hidden="true"
                     />
                     <span className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold text-maroon-deep shadow-soft transition-transform duration-300 group-hover:scale-110">
+                      <span className="flex h-16 w-16 items-center justify-center rounded-none bg-gold text-maroon-deep shadow-soft transition-transform duration-300 group-hover:scale-110">
                         <Play className="ml-1 h-6 w-6 fill-current" aria-hidden="true" />
                       </span>
                     </span>

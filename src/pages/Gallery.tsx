@@ -24,7 +24,7 @@ export default function Gallery() {
         image={IMAGES['gallery-exterior']}
       />
 
-      <section className="bg-ivory py-24 md:py-32">
+      <section className="bg-ivory py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="In pictures" title="Parish in Frames" />
 
@@ -48,7 +48,7 @@ export default function Gallery() {
           </Reveal>
 
           {/* masonry */}
-          <div className="mt-12 columns-2 gap-4 md:columns-3 lg:columns-4 [&>*]:mb-4">
+          <div className="mt-8 columns-2 gap-4 md:columns-3 lg:columns-4 [&>*]:mb-4">
             <AnimatePresence mode="popLayout">
               {filtered.map((item, i) => (
                 <motion.button

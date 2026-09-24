@@ -10,7 +10,7 @@ import { PARISH, EVENTS, EVENT_CATEGORIES, FEAST_VIDEOS, PATRONAL_FEASTS, type P
 
 function Feasts() {
   return (
-    <section className="bg-maroon-deep py-24 md:py-32">
+    <section className="bg-maroon-deep py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           dark
@@ -18,7 +18,7 @@ function Feasts() {
           title="Our Feasts"
           description="Two heavenly patrons watch over Thalayanadu — their feasts are the high points of our parish year."
         />
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="mt-10 grid gap-8 lg:grid-cols-2">
           {PATRONAL_FEASTS.map((feast, i) => (
             <Reveal key={feast.name} delay={i * 0.08} className="h-full">
               <div className="flex h-full flex-col rounded-3xl border border-gold/25 bg-maroon-rich/40 p-10 transition-colors duration-500 hover:border-gold/60 md:p-12">
@@ -144,7 +144,7 @@ export default function Events() {
 
       <Feasts />
 
-      <section className="bg-ivory py-24 md:py-32">
+      <section className="bg-ivory py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="Through the year" title="What’s Happening" />
 
@@ -168,7 +168,7 @@ export default function Events() {
           </Reveal>
 
           {/* event list */}
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <AnimatePresence mode="popLayout">
               {filtered.map((event) => (
                 <motion.article
@@ -224,7 +224,7 @@ export default function Events() {
           </div>
 
           {filtered.length === 0 && (
-            <p className="mt-16 text-center font-display text-2xl italic text-charcoal/50">
+            <p className="mt-10 text-center font-display text-2xl italic text-charcoal/50">
               No events in this category yet.
             </p>
           )}
@@ -232,7 +232,7 @@ export default function Events() {
       </section>
 
       {/* Past feast recordings */}
-      <section className="bg-maroon-deep py-24 md:py-32" aria-labelledby="feast-videos">
+      <section className="bg-maroon-deep py-14 md:py-20" aria-labelledby="feast-videos">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
             <div id="feast-videos" className="text-center">
@@ -248,7 +248,7 @@ export default function Events() {
               </p>
             </div>
           </Reveal>
-          <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {FEAST_VIDEOS.map((video, i) => (
               <Reveal key={video.url} delay={i * 0.08}>
                 <a

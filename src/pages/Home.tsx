@@ -146,7 +146,7 @@ function Hero() {
 
 function Welcome() {
   return (
-    <section id="welcome" className="bg-ivory py-24 md:py-36">
+    <section id="welcome" className="bg-ivory py-14 md:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-20">
         <Reveal className="relative">
           <div className="img-frame aspect-[4/5] shadow-soft">
@@ -200,7 +200,7 @@ function MassPreview() {
   const todayIds = new Set(today.map((m) => m.id));
 
   return (
-    <section className="relative overflow-hidden bg-maroon-deep py-24 md:py-32">
+    <section className="relative overflow-hidden bg-maroon-deep py-14 md:py-20">
       {/* faint backdrop */}
       <div className="absolute inset-0 opacity-[0.14]" aria-hidden="true">
         <img src={IMAGES['mass-timings-bg']} alt="" className="h-full w-full object-cover" />
@@ -215,7 +215,7 @@ function MassPreview() {
           description="The Holy Qurbana is the heartbeat of our parish. All are welcome at every celebration."
         />
 
-        <div className="mt-14">
+        <div className="mt-10">
           {MASS_SCHEDULE.slice(0, 4).map((m, i) => {
             const isToday = todayIds.has(m.id);
             return (
@@ -251,7 +251,7 @@ function MassPreview() {
           })}
         </div>
 
-        <Reveal className="mt-12 text-center">
+        <Reveal className="mt-8 text-center">
           <Button variant="gold" asChild>
             <Link to="/mass-timings">
               View Full Schedule <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -294,7 +294,7 @@ const PARISH_LIFE = [
 
 function ParishLife() {
   return (
-    <section className="bg-cream/60 py-24 md:py-32">
+    <section className="bg-cream/60 py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Parish life"
@@ -302,7 +302,7 @@ function ParishLife() {
           description="Four pillars hold up everything we are — worship, sacrament, fellowship and prayer."
         />
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PARISH_LIFE.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08} className="h-full">
               <Link
@@ -348,7 +348,7 @@ function Story() {
   const bgY = useTransform(scrollYProgress, [0, 1], ['-12%', '12%']);
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-maroon-deep py-28 md:py-40">
+    <section ref={ref} className="relative overflow-hidden bg-maroon-deep py-12 md:py-16">
       <motion.div style={{ y: bgY }} className="absolute inset-0" aria-hidden="true">
         <img src={IMAGES['story-wide']} alt="" className="h-[124%] w-full object-cover" loading="lazy" />
       </motion.div>
@@ -386,7 +386,7 @@ function UpcomingEvents() {
   const upcoming = EVENTS.slice(0, 3);
 
   return (
-    <section className="bg-ivory py-24 md:py-32">
+    <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeading
@@ -405,7 +405,7 @@ function UpcomingEvents() {
           </Reveal>
         </div>
 
-        <div className="mt-12 divide-y divide-maroon/10 border-y border-maroon/10">
+        <div className="mt-8 divide-y divide-maroon/10 border-y border-maroon/10">
           {upcoming.map((event, i) => (
             <Reveal key={event.id} delay={i * 0.06}>
               <Link
@@ -446,7 +446,7 @@ function GalleryPreview() {
   const preview = GALLERY.slice(0, 6);
 
   return (
-    <section className="bg-cream/60 py-24 md:py-32">
+    <section className="bg-cream/60 py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Moments of grace"
@@ -454,7 +454,7 @@ function GalleryPreview() {
           description="Feasts and quiet mornings, candlelight and celebration — fragments of our life together."
         />
 
-        <div className="mt-14 columns-2 gap-4 md:columns-3 [&>*]:mb-4">
+        <div className="mt-10 columns-2 gap-4 md:columns-3 [&>*]:mb-4">
           {preview.map((item, i) => (
             <Reveal key={item.image} delay={(i % 3) * 0.08} className="break-inside-avoid">
               <Link to="/gallery" className="img-frame group relative block" aria-label={`View gallery — ${item.caption}`}>
@@ -476,7 +476,7 @@ function GalleryPreview() {
           ))}
         </div>
 
-        <Reveal className="mt-12 text-center">
+        <Reveal className="mt-8 text-center">
           <Button variant="outlineDark" asChild>
             <Link to="/gallery">
               View Gallery <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -492,7 +492,7 @@ function GalleryPreview() {
 
 function Community() {
   return (
-    <section className="bg-ivory py-24 md:py-32">
+    <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-20">
         <div className="order-2 lg:order-1">
           <Reveal>
@@ -529,7 +529,7 @@ function Community() {
 
 function Prayer() {
   return (
-    <section className="relative overflow-hidden bg-maroon-deep py-24 md:py-32">
+    <section className="relative overflow-hidden bg-maroon-deep py-14 md:py-20">
       <div className="absolute inset-0 opacity-20" aria-hidden="true">
         <img src={IMAGES['gallery-candles']} alt="" className="h-full w-full object-cover" loading="lazy" />
       </div>
@@ -561,7 +561,7 @@ function Prayer() {
 
 function Location() {
   return (
-    <section className="bg-ivory py-24 md:py-32">
+    <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Find us"
@@ -569,7 +569,7 @@ function Location() {
           description="In the heart of Thalayanadu — come for Mass, for prayer, or simply for a moment of quiet."
         />
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="mt-10 grid gap-8 lg:grid-cols-2">
           {/* map */}
           <Reveal className="min-h-[380px] min-w-0">
             <div className="relative h-full min-h-[380px] overflow-hidden rounded-3xl border border-maroon/10 shadow-card">
@@ -653,7 +653,7 @@ function Blessing() {
   const bgY = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-maroon-deep py-32 md:py-44">
+    <section ref={ref} className="relative overflow-hidden bg-maroon-deep py-14 md:py-20">
       <motion.div style={{ y: bgY }} className="absolute inset-0" aria-hidden="true">
         <img src={IMAGES['blessing-sunset']} alt="" className="h-[120%] w-full object-cover" loading="lazy" />
       </motion.div>

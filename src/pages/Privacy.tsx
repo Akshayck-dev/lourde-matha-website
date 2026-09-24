@@ -12,7 +12,7 @@ export default function Privacy() {
         description="How we handle the information you share with us."
         image={IMAGES['interior-nave']}
       />
-      <section className="bg-ivory py-24 md:py-28">
+      <section className="bg-ivory py-14 md:py-20">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
           <Reveal>
             <div className="space-y-8 text-[16px] font-light leading-relaxed text-charcoal/75">

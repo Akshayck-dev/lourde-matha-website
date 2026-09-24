@@ -26,7 +26,7 @@ export default function Offerings() {
       />
 
       {/* Rates */}
-      <section className="bg-ivory py-20 md:py-28" aria-labelledby="offering-rates">
+      <section className="bg-ivory py-12 md:py-16" aria-labelledby="offering-rates">
         <div className="mx-auto max-w-4xl px-5 md:px-8">
           <Reveal>
             <div id="offering-rates">
@@ -34,7 +34,7 @@ export default function Offerings() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <ul className="mt-12 divide-y divide-maroon/10 border-y border-maroon/10">
+            <ul className="mt-8 divide-y divide-maroon/10 border-y border-maroon/10">
               {OFFERING_RATES.map((item) => (
                 <li
                   key={item.ml}
@@ -63,7 +63,7 @@ export default function Offerings() {
       </section>
 
       {/* Bank details */}
-      <section className="bg-cream py-20 md:py-28" aria-labelledby="bank-details">
+      <section className="bg-cream py-12 md:py-16" aria-labelledby="bank-details">
         <div className="mx-auto max-w-4xl px-5 md:px-8">
           <Reveal>
             <div id="bank-details">
@@ -71,7 +71,7 @@ export default function Offerings() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-gold/40 bg-ivory p-8 shadow-soft md:p-10">
+            <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-gold/40 bg-ivory p-8 shadow-soft md:p-10">
               <div className="mb-8 flex items-center justify-center gap-3">
                 <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/60 text-gold-dark">
                   <Landmark className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
@@ -101,7 +101,7 @@ export default function Offerings() {
       </section>
 
       {/* Please note */}
-      <section className="bg-maroon-deep py-20 md:py-28" aria-labelledby="offering-note">
+      <section className="bg-maroon-deep py-12 md:py-16" aria-labelledby="offering-note">
         <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
           <Reveal>
             <div id="offering-note">

@@ -43,7 +43,7 @@ function TodayBanner() {
 
 function Schedule() {
   return (
-    <section className="bg-ivory py-24 md:py-32">
+    <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Holy Qurbana & sacraments"
@@ -51,7 +51,7 @@ function Schedule() {
           description="The Holy Qurbana is celebrated according to the Syro-Malabar liturgy. Confessions are heard before Mass and on request."
         />
 
-        <div className="mt-14 overflow-hidden rounded-3xl border border-maroon/10 bg-white/60 shadow-card">
+        <div className="mt-10 overflow-hidden rounded-3xl border border-maroon/10 bg-white/60 shadow-card">
           {MASS_SCHEDULE.map((m, i) => {
             const isToday = todaysMassEntries().some((t) => t.id === m.id);
             return (
@@ -95,7 +95,7 @@ function Schedule() {
           </div>
         </Reveal>
 
-        <Reveal className="mt-12 text-center">
+        <Reveal className="mt-8 text-center">
           <Link
             to="/events"
             className="text-[13px] font-medium uppercase tracking-[0.18em] text-maroon-deep underline decoration-gold decoration-2 underline-offset-8 transition-colors hover:text-gold-dark"

@@ -25,7 +25,7 @@ const MINISTRY_ICONS = [Music, Users, BookOpen, HandHeart, Church];
 
 function Story() {
   return (
-    <section className="bg-ivory py-24 md:py-32">
+    <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto max-w-4xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Our story"
@@ -33,7 +33,7 @@ function Story() {
           description={`The story of ${PARISH.name} is the story of the families of Thalayanadu — their faith, their feasts, and their quiet fidelity across generations.`}
         />
 
-        <div className="relative mt-16">
+        <div className="relative mt-10">
           {/* timeline spine */}
           <div className="absolute bottom-0 left-[7px] top-0 w-px bg-gold/40 md:left-1/2" aria-hidden="true" />
 
@@ -66,7 +66,7 @@ function Story() {
 
 function Mission() {
   return (
-    <section className="bg-cream/70 py-24 md:py-28">
+    <section className="bg-cream/70 py-14 md:py-20">
       <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
         <Reveal>
           <p className="eyebrow">Our mission</p>
@@ -82,13 +82,13 @@ function Mission() {
 
 function Values() {
   return (
-    <section className="bg-ivory py-24 md:py-32">
+    <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="What we hold dear"
           title="Our Values"
         />
-        <div className="mt-14 grid gap-px bg-maroon/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-px bg-maroon/10 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.07} className="h-full">
               <div className="group h-full rounded-3xl bg-ivory p-9 transition-colors duration-500 hover:bg-maroon-deep">
@@ -112,7 +112,7 @@ function Values() {
 
 function Leadership() {
   return (
-    <section className="bg-maroon-deep py-24 md:py-32">
+    <section className="bg-maroon-deep py-14 md:py-20">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <SectionHeading
           dark
@@ -121,7 +121,7 @@ function Leadership() {
           description="Guided by our vicar and served by the parish council, our parish walks together in faith."
         />
 
-        <div className="mt-14 flex justify-center">
+        <div className="mt-10 flex justify-center">
           <Reveal>
             <div className="group relative max-w-sm rounded-3xl border border-gold/25 bg-maroon-rich/40 p-10 text-center transition-colors duration-500 hover:border-gold/60">
               {/* monogram */}
@@ -147,7 +147,7 @@ function Leadership() {
 
 function CommunitySection() {
   return (
-    <section className="bg-ivory py-24 md:py-32">
+    <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <div className="img-frame aspect-[4/3] shadow-soft">
@@ -202,14 +202,14 @@ export default function About() {
 
 function Sacraments() {
   return (
-    <section className="bg-ivory py-24 md:py-32">
+    <section className="bg-ivory py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Milestones of faith"
           title="Sacraments"
           description="From baptism to matrimony — the sacred moments of Christian life, celebrated in the Syro-Malabar tradition."
         />
-        <div className="mt-14 grid gap-px bg-maroon/10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-px bg-maroon/10 sm:grid-cols-2 lg:grid-cols-3">
           {SACRAMENTS.map((s, i) => {
             const Icon = SACRAMENT_ICONS[i % SACRAMENT_ICONS.length];
             return (
@@ -230,7 +230,7 @@ function Sacraments() {
           })}
         </div>
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-12 max-w-2xl text-center text-[15px] font-light italic leading-relaxed text-charcoal/60">
+          <p className="mx-auto mt-8 max-w-2xl text-center text-[15px] font-light italic leading-relaxed text-charcoal/60">
             To arrange a sacrament, please speak to the parish office — we will guide you
             through every step.
           </p>
@@ -249,7 +249,7 @@ function Sacraments() {
 
 function Ministries() {
   return (
-    <section className="bg-maroon-deep py-24 md:py-32">
+    <section className="bg-maroon-deep py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           dark
@@ -257,7 +257,7 @@ function Ministries() {
           title="Ministries & Groups"
           description="The life of our parish is carried by its people — there is a place for every gift here."
         />
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {MINISTRIES.map((m, i) => {
             const Icon = MINISTRY_ICONS[i % MINISTRY_ICONS.length];
             return (
@@ -274,7 +274,7 @@ function Ministries() {
           })}
         </div>
         <Reveal delay={0.15}>
-          <p className="mx-auto mt-12 max-w-2xl text-center text-[15px] font-light leading-relaxed text-ivory/60">
+          <p className="mx-auto mt-8 max-w-2xl text-center text-[15px] font-light leading-relaxed text-ivory/60">
             Want to lend your voice, your hands or your time?{' '}
             <Link to="/contact" className="text-gold-light underline-offset-4 transition-colors hover:text-gold hover:underline">
               Get in touch

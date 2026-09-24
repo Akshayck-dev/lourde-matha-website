@@ -119,7 +119,7 @@ export default function Contact() {
         image={IMAGES['welcome-facade']}
       />
 
-      <section className="bg-ivory py-24 md:py-32">
+      <section className="bg-ivory py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
             {/* info */}

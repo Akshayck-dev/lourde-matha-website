@@ -172,7 +172,7 @@ function Welcome() {
             <div className="img-frame aspect-[4/3]">
               <img src={IMAGES['welcome-facade']} alt="Entrance of Lourde Matha Church" loading="lazy" />
             </div>
-            <div className="absolute -bottom-5 left-6 hidden bg-maroon-deep px-7 py-5 text-ivory md:block">
+            <div className="absolute -bottom-5 left-6 hidden rounded-2xl bg-maroon-deep px-7 py-5 text-ivory shadow-card md:block">
               <p className="font-display text-4xl font-extrabold text-gold-light">1935</p>
               <p className="mt-1 font-display text-[10px] font-bold uppercase tracking-luxe text-ivory/60">
                 Established
@@ -244,7 +244,7 @@ function Schedule() {
             const isToday = todayIds.has(m.id);
             return (
               <Reveal key={m.id} delay={(i % 2) * 0.08}>
-                <div className="flex h-full items-stretch bg-[#F7EFEF]">
+                <div className="flex h-full items-stretch overflow-hidden rounded-2xl bg-[#F7EFEF]">
                   <div className="flex w-20 shrink-0 items-center justify-center bg-accent-coral">
                     <Clock className="h-8 w-8 text-white" strokeWidth={1.25} aria-hidden="true" />
                   </div>
@@ -252,7 +252,7 @@ function Schedule() {
                     <p className="flex flex-wrap items-center gap-3 font-display text-lg font-extrabold uppercase tracking-tight text-maroon-deep">
                       {m.label}
                       {isToday && (
-                        <span className="bg-accent-coral px-2 py-0.5 font-display text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                        <span className="rounded-full bg-accent-coral px-2.5 py-0.5 font-display text-[10px] font-bold uppercase tracking-[0.18em] text-white">
                           Today
                         </span>
                       )}
@@ -287,7 +287,7 @@ function ActionCards() {
     <section className="bg-ivory pb-14 md:pb-20">
       <div className="mx-auto grid max-w-6xl gap-6 px-5 md:grid-cols-2 md:px-8">
         <Reveal>
-          <div className="flex h-full flex-col bg-accent-teal px-8 py-12 text-white md:px-12">
+          <div className="flex h-full flex-col rounded-3xl bg-accent-teal px-8 py-12 text-white md:px-12">
             <HandHeart className="h-10 w-10" strokeWidth={1.25} aria-hidden="true" />
             <h3 className="mt-6 font-display text-3xl font-extrabold uppercase tracking-tight">
               Prayer Intentions
@@ -306,7 +306,7 @@ function ActionCards() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="flex h-full flex-col bg-accent-blue px-8 py-12 text-white md:px-12">
+          <div className="flex h-full flex-col rounded-3xl bg-accent-blue px-8 py-12 text-white md:px-12">
             <Star className="h-10 w-10" strokeWidth={1.25} aria-hidden="true" />
             <h3 className="mt-6 font-display text-3xl font-extrabold uppercase tracking-tight">
               Offerings &amp; Mass Intentions

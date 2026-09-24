@@ -40,10 +40,16 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const solid = scrolled || open;
+  // Floating pill nav once the user scrolls past the hero
+  const floating = scrolled && !open;
 
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-50">
+      <div
+        className={`fixed z-50 transition-all duration-500 ${
+          floating ? 'inset-x-0 top-3 flex justify-center px-4 sm:top-4' : 'inset-x-0 top-0'
+        }`}
+      >
       {/* utility bar — hidden once scrolled, like the reference */}
       {!solid && (
         <div className="hidden bg-maroon-deep md:block">
@@ -73,7 +79,7 @@ export default function Navbar() {
               </span>
               <Link
                 to="/offerings"
-                className="bg-accent-cyan px-5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:bg-maroon-deep"
+                className="rounded-full bg-accent-cyan px-5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:bg-maroon-deep"
               >
                 Donate
               </Link>
@@ -85,15 +91,19 @@ export default function Navbar() {
         initial={{ y: -70, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className={`w-full transition-all duration-500 ${
-          solid
-            ? 'bg-ivory shadow-card'
-            : 'bg-gradient-to-b from-black/45 to-transparent'
+        className={`transition-all duration-500 ${
+          floating
+            ? 'w-full max-w-6xl rounded-full border border-maroon/10 bg-ivory/95 shadow-card backdrop-blur-md'
+            : solid
+              ? 'w-full bg-ivory/90 shadow-card backdrop-blur-md'
+              : 'w-full bg-gradient-to-b from-black/45 to-transparent'
         }`}
       >
         <nav
-          className={`mx-auto flex w-full max-w-7xl items-center justify-between px-5 transition-all duration-500 md:px-8 ${
-            solid ? 'py-3' : 'py-5'
+          className={`mx-auto flex items-center justify-between transition-all duration-500 ${
+            floating
+              ? 'w-full max-w-6xl px-5 py-3 md:px-7'
+              : 'w-full max-w-7xl px-5 md:px-8 ' + (solid ? 'py-3' : 'py-5')
           }`}
           aria-label="Primary"
         >

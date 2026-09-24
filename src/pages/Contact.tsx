@@ -8,7 +8,7 @@ import { IMAGES } from '../data/images';
 import { PARISH } from '../data/site';
 
 const inputClass =
-  'w-full rounded-none border border-maroon/15 bg-white/70 px-5 py-4 text-[15px] font-light text-charcoal placeholder:text-charcoal/35 outline-none transition-all duration-300 focus:border-gold focus:bg-white focus:shadow-card';
+  'w-full rounded-xl border border-maroon/15 bg-white/70 px-5 py-4 text-[15px] font-light text-charcoal placeholder:text-charcoal/35 outline-none transition-all duration-300 focus:border-gold focus:bg-white focus:shadow-card';
 
 function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -28,7 +28,7 @@ function ContactForm() {
 
   if (sent) {
     return (
-      <div className="flex h-full min-h-[420px] flex-col items-center justify-center rounded-none border border-maroon/10 bg-white/60 p-10 text-center shadow-card">
+      <div className="flex h-full min-h-[420px] flex-col items-center justify-center rounded-2xl border border-maroon/10 bg-white/60 p-10 text-center shadow-card">
         <CheckCircle2 className="h-14 w-14 text-gold" strokeWidth={1.25} aria-hidden="true" />
         <h3 className="mt-6 font-display text-3xl font-medium text-maroon-deep">Thank You</h3>
         <p className="mt-3 max-w-sm text-[15px] font-light leading-relaxed text-charcoal/65">
@@ -47,7 +47,7 @@ function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-none border border-maroon/10 bg-white/60 p-7 shadow-card md:p-10">
+    <form onSubmit={handleSubmit} className="rounded-2xl border border-maroon/10 bg-white/60 p-7 shadow-card md:p-10">
       <h3 className="font-display text-3xl font-medium text-maroon-deep">Send a Message</h3>
       <p className="mt-2 text-[14.5px] font-light text-charcoal/60">
         We usually reply within a day or two.
@@ -129,7 +129,7 @@ export default function Contact() {
                 <ul className="mt-10 divide-y divide-maroon/10 border-y border-maroon/10">
                   {details.map(({ icon: Icon, label, value, href }) => (
                     <li key={label} className="flex items-start gap-5 py-6">
-                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-none border border-gold/50 text-gold-dark">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-gold/50 text-gold-dark">
                         <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
                       </span>
                       <span>
@@ -154,7 +154,7 @@ export default function Contact() {
                 </ul>
               </Reveal>
               <Reveal delay={0.16}>
-                <div className="mt-8 rounded-none border border-gold/40 bg-gold/10 p-6">
+                <div className="mt-8 rounded-xl border border-gold/40 bg-gold/10 p-6">
                   <p className="font-display text-xl italic text-maroon-deep">
                     “Come to me, all you who are weary, and I will give you rest.”
                   </p>
@@ -181,7 +181,7 @@ export default function Contact() {
           referrerPolicy="no-referrer-when-downgrade"
         />
         <div className="pointer-events-none absolute left-1/2 top-8 -translate-x-1/2">
-          <div className="pointer-events-auto bg-maroon-deep px-8 py-5 text-center shadow-soft">
+          <div className="pointer-events-auto rounded-2xl bg-maroon-deep px-8 py-5 text-center shadow-soft">
             <p className="font-display text-2xl text-ivory">{PARISH.name}</p>
             <a
               href={PARISH.mapsUrl}

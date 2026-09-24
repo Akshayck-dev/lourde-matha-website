@@ -18,7 +18,7 @@ function TodayBanner() {
     <section className="border-b border-maroon/10 bg-cream/60">
       <div className="mx-auto max-w-5xl px-5 py-10 md:px-8">
         <Reveal className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-none bg-gold/20 text-gold-dark">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold/20 text-gold-dark">
             <Sparkles className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
           </span>
           <div>
@@ -51,7 +51,7 @@ function Schedule() {
           description="The Holy Qurbana is celebrated according to the Syro-Malabar liturgy. Confessions are heard before Mass and on request."
         />
 
-        <div className="mt-10 overflow-hidden rounded-none border border-maroon/10 bg-white/60 shadow-card">
+        <div className="mt-10 overflow-hidden rounded-2xl border border-maroon/10 bg-white/60 shadow-card">
           {MASS_SCHEDULE.map((m, i) => {
             const isToday = todaysMassEntries().some((t) => t.id === m.id);
             return (

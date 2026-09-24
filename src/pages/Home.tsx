@@ -478,12 +478,15 @@ function GalleryPreview() {
           ))}
         </div>
 
-        <Reveal className="mt-8 text-center">
-          <Button variant="outlineDark" asChild>
-            <Link to="/gallery">
-              View Gallery <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Button>
+        <Reveal className="relative mt-12">
+          <div className="absolute inset-x-0 top-1/2 h-[7px] -translate-y-1/2 border-y border-maroon/25" aria-hidden="true" />
+          <div className="relative flex justify-center">
+            <Button variant="gold" asChild>
+              <Link to="/gallery">
+                View Gallery <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
         </Reveal>
       </div>
     </section>
@@ -647,6 +650,28 @@ function Location() {
   );
 }
 
+/* ============================ 10. QUOTE BAND =========================== */
+
+function QuoteBand() {
+  return (
+    <section className="bg-cream py-14 md:py-20">
+      <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
+        <Reveal>
+          <p className="font-display text-7xl leading-none text-gold" aria-hidden="true">
+            &ldquo;
+          </p>
+          <blockquote className="-mt-5 font-display text-3xl font-medium italic leading-snug text-maroon-deep md:text-4xl">
+            Hail Mary, full of grace, the Lord is with thee.
+          </blockquote>
+          <p className="mt-6 text-[12px] font-medium uppercase tracking-[0.24em] text-gold-dark">
+            Luke 1 : 28
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ========================= 11. FINAL BLESSING ======================== */
 
 function Blessing() {
@@ -700,6 +725,7 @@ export default function Home() {
       <Community />
       <Prayer />
       <Location />
+      <QuoteBand />
       <Blessing />
     </main>
   );

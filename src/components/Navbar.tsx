@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { NAV_LINKS } from '../data/site';
+import { Menu, X, ArrowUpRight, Phone } from 'lucide-react';
+import { NAV_LINKS, PARISH } from '../data/site';
 import { getLenis } from '../lib/lenis';
 import { Logo } from './Logo';
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from './SocialIcons';
 import { Button } from './ui/button';
 
 
@@ -49,6 +50,42 @@ export default function Navbar() {
           floating ? 'inset-x-0 top-3 flex justify-center px-4 sm:top-4' : 'inset-x-0 top-0'
         }`}
       >
+      {!floating && (
+        <div className="hidden bg-maroon-deep md:block">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-2 md:px-8">
+            <p className="truncate text-[11px] font-light uppercase tracking-[0.16em] text-ivory/65">
+              {PARISH.addressLines.join(' · ')}
+            </p>
+            <div className="flex shrink-0 items-center gap-5">
+              <a
+                href={PARISH.phoneHref}
+                className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-ivory/80 transition-colors hover:text-gold-light"
+              >
+                <Phone className="h-3.5 w-3.5" strokeWidth={1.75} aria-hidden="true" />
+                {PARISH.phone}
+              </a>
+              <span className="h-4 w-px bg-ivory/20" aria-hidden="true" />
+              <span className="flex items-center gap-3.5 text-ivory/65">
+                {[
+                  { icon: FacebookIcon, label: 'Facebook' },
+                  { icon: InstagramIcon, label: 'Instagram' },
+                  { icon: YoutubeIcon, label: 'YouTube' },
+                ].map(({ icon: Icon, label }) => (
+                  <a key={label} href="#" aria-label={label} className="transition-colors hover:text-gold-light">
+                    <Icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </span>
+              <Link
+                to="/offerings"
+                className="rounded-full bg-gold px-5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-maroon-deep transition-colors duration-300 hover:bg-gold-light"
+              >
+                Donate
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
       <motion.header
         initial={{ y: -70, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

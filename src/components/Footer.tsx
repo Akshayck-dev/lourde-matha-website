@@ -2,42 +2,45 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { PARISH, NAV_LINKS, MASS_SCHEDULE } from '../data/site';
 import { Logo } from './Logo';
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from './SocialIcons';
 import Reveal from './Reveal';
-
-function FacebookIcon(props: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={props.className} aria-hidden="true">
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-    </svg>
-  );
-}
-
-function InstagramIcon(props: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={props.className} aria-hidden="true">
-      <rect x="2" y="2" width="20" height="20" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
-    </svg>
-  );
-}
-
-function YoutubeIcon(props: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={props.className} aria-hidden="true">
-      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-      <path d="m10 15 5-3-5-3z" />
-    </svg>
-  );
-}
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-maroon-deep text-ivory">
-      {/* gold hairline */}
-      <div className="h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent" aria-hidden="true" />
+      {/* tri-band contact strip */}
+      <div className="grid md:grid-cols-3">
+        <a
+          href={PARISH.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex flex-col items-center bg-maroon-deep px-6 py-10 text-center text-ivory transition-colors duration-300 hover:bg-maroon-rich"
+        >
+          <MapPin className="h-8 w-8 text-gold-light transition-transform duration-300 group-hover:-translate-y-1" strokeWidth={1.25} aria-hidden="true" />
+          <p className="mt-4 text-[12px] font-semibold uppercase tracking-[0.24em]">Location</p>
+          <p className="mt-2 max-w-xs text-[14.5px] font-light leading-relaxed text-ivory/75">
+            {PARISH.addressLines.join(', ')}
+          </p>
+        </a>
+        <a
+          href={PARISH.phoneHref}
+          className="group flex flex-col items-center bg-maroon px-6 py-10 text-center text-ivory transition-colors duration-300 hover:bg-maroon-rich"
+        >
+          <Phone className="h-8 w-8 text-gold-light transition-transform duration-300 group-hover:-translate-y-1" strokeWidth={1.25} aria-hidden="true" />
+          <p className="mt-4 text-[12px] font-semibold uppercase tracking-[0.24em]">Phone</p>
+          <p className="mt-2 text-[15px] font-light tracking-wide text-ivory/85">{PARISH.phone}</p>
+        </a>
+        <a
+          href={`mailto:${PARISH.email}`}
+          className="group flex flex-col items-center bg-gold px-6 py-10 text-center text-maroon-deep transition-colors duration-300 hover:bg-gold-light"
+        >
+          <Mail className="h-8 w-8 transition-transform duration-300 group-hover:-translate-y-1" strokeWidth={1.25} aria-hidden="true" />
+          <p className="mt-4 text-[12px] font-semibold uppercase tracking-[0.24em]">Email</p>
+          <p className="mt-2 break-all text-[14.5px] font-light">{PARISH.email}</p>
+        </a>
+      </div>
 
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">

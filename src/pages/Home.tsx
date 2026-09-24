@@ -37,32 +37,31 @@ function Hero() {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', reduce ? '0%' : '18%']);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
     <section ref={ref} className="relative flex min-h-svh items-center overflow-hidden bg-maroon-deep">
-      {/* background with slow cinematic zoom + parallax — desktop & mobile crops */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0" aria-hidden="true">
+      {/* background — full image, exactly one screen, no crop or zoom */}
+      <div className="absolute inset-x-0 top-0 h-svh" aria-hidden="true">
         <motion.img
           src={IMAGES['hero-lourdes-desktop']}
           alt=""
-          initial={{ scale: 1.12 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2.4, ease }}
-          className="hidden h-[115%] w-full object-cover md:block"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.6, ease }}
+          className="hidden h-full w-full object-cover md:block"
         />
         <motion.img
           src={IMAGES['hero-lourdes-mobile']}
           alt=""
-          initial={{ scale: 1.12 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2.4, ease }}
-          className="h-[115%] w-full object-cover md:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.6, ease }}
+          className="h-full w-full object-cover md:hidden"
         />
-      </motion.div>
+      </div>
       <div
-        className="absolute inset-0 bg-gradient-to-b from-maroon-deep/60 via-maroon-deep/35 to-maroon-deep/75"
+        className="absolute inset-x-0 top-0 h-svh bg-gradient-to-b from-maroon-deep/60 via-maroon-deep/35 to-maroon-deep/75"
         aria-hidden="true"
       />
 

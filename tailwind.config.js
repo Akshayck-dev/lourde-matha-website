@@ -22,9 +22,9 @@ export default {
         charcoal: '#222222',
       },
       fontFamily: {
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['Jost', 'system-ui', '-apple-system', 'sans-serif'],
-        malayalam: ['"Noto Serif Malayalam"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        display: ['Lora', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        malayalam: ['"Noto Serif Malayalam"', 'Lora', 'Georgia', 'serif'],
       },
       letterSpacing: {
         luxe: '0.32em',

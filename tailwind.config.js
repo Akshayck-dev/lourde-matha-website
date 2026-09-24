@@ -4,11 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Theme: sky blue + white (token names kept for compatibility)
         maroon: {
-          DEFAULT: '#4A0715',
-          deep: '#2E040C',
-          rich: '#650D1B',
-          soft: '#7A1B2C',
+          DEFAULT: '#0369A1',
+          deep: '#0C4A6E',
+          rich: '#0284C7',
+          soft: '#0EA5E9',
         },
         gold: {
           DEFAULT: '#C9A227',
@@ -16,9 +17,9 @@ export default {
           pale: '#F3E5BC',
           dark: '#9A7B1B',
         },
-        ivory: '#FFF8E7',
-        cream: '#F5EBD5',
-        sand: '#EFE3C8',
+        ivory: '#FFFFFF',
+        cream: '#F0F9FF',
+        sand: '#E0F2FE',
         charcoal: '#222222',
       },
       fontFamily: {
@@ -30,8 +31,8 @@ export default {
         luxe: '0.32em',
       },
       boxShadow: {
-        soft: '0 24px 60px -24px rgba(46, 4, 12, 0.25)',
-        card: '0 12px 40px -16px rgba(46, 4, 12, 0.18)',
+        soft: '0 24px 60px -24px rgba(12, 74, 110, 0.25)',
+        card: '0 12px 40px -16px rgba(12, 74, 110, 0.18)',
       },
     },
   },

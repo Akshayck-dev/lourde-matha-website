@@ -11,7 +11,7 @@ const buttonVariants = cva(
       variant: {
         gold: 'bg-gold text-maroon-deep shadow-[0_2px_14px_rgba(176,141,58,0.28)] hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-[0_12px_30px_rgba(176,141,58,0.4)]',
         maroon:
-          'bg-maroon text-ivory shadow-[0_2px_14px_rgba(92,22,34,0.28)] hover:-translate-y-0.5 hover:bg-maroon-rich hover:shadow-[0_12px_30px_rgba(92,22,34,0.4)]',
+          'bg-maroon text-ivory shadow-[0_2px_14px_rgba(3,105,161,0.28)] hover:-translate-y-0.5 hover:bg-maroon-rich hover:shadow-[0_12px_30px_rgba(3,105,161,0.4)]',
         outline:
           'border border-ivory/40 text-ivory hover:-translate-y-0.5 hover:border-gold-light hover:text-gold-light hover:shadow-[0_12px_30px_rgba(0,0,0,0.35)]',
         outlineDark:

@@ -5,7 +5,7 @@ import { PARISH } from '../data/site';
 
 export default function Privacy() {
   return (
-    <main>
+    <main id="main-content">
       <PageHero
         eyebrow="Our commitment"
         title="Privacy Policy"

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akshayck-dev.github.io/lourde-matha-website/sitemap.xml

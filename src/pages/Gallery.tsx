@@ -16,7 +16,7 @@ export default function Gallery() {
   const lightboxImages = filtered.map((g) => ({ src: IMAGES[g.image], caption: g.caption }));
 
   return (
-    <main>
+    <main id="main-content">
       <PageHero
         eyebrow="Moments of grace"
         title="Gallery"

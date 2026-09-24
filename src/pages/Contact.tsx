@@ -111,7 +111,7 @@ export default function Contact() {
   ];
 
   return (
-    <main>
+    <main id="main-content">
       <PageHero
         eyebrow="We’d love to hear from you"
         title="Contact Us"

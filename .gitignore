@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# QA screenshots (local only)
+qa/
+screenshots/

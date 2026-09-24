@@ -17,7 +17,7 @@ function MalayalamHeading({ eyebrow, ml }: { eyebrow: string; ml: string }) {
 
 export default function Offerings() {
   return (
-    <main>
+    <main id="main-content">
       <PageHero
         eyebrow="നേർച്ചകൾ · Offerings"
         title="Offerings"

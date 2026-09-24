@@ -136,7 +136,7 @@ export default function Events() {
   const filtered = filter === 'All' ? EVENTS : EVENTS.filter((e) => e.category === filter);
 
   return (
-    <main>
+    <main id="main-content">
       <PageHero
         eyebrow="Celebrate with us"
         title="Parish Events"

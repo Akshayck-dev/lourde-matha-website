@@ -269,13 +269,11 @@ function Schedule() {
         </div>
 
         <Reveal className="mt-10 text-center">
-          <Link
-            to="/mass-timings"
-            className="group inline-flex items-center gap-2 font-display text-[12px] font-bold uppercase tracking-[0.2em] text-maroon-deep transition-colors hover:text-gold-dark"
-          >
-            More
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          </Link>
+          <Button variant="gold" asChild>
+            <Link to="/mass-timings">
+              View Full Schedule <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Button>
         </Reveal>
       </div>
     </section>
@@ -424,7 +422,7 @@ function GalleryPreview() {
                   src={IMAGES[item.image]}
                   alt={item.caption}
                   loading="lazy"
-                  className={item.tall ? 'aspect-[3/4]' : 'aspect-[4/3]'}
+                  className="aspect-[4/3]"
                 />
                 <span
                   className="absolute inset-0 bg-maroon-deep/0 transition-colors duration-500 group-hover:bg-maroon-deep/25"
@@ -458,7 +456,7 @@ function GalleryPreview() {
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <Hero />
       <Welcome />
       <StoryBand />

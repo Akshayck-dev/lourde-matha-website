@@ -10,6 +10,8 @@ import Gallery from './pages/Gallery';
 import Offerings from './pages/Offerings';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
+import NotFound from './pages/NotFound';
+import BackToTop from './components/BackToTop';
 import { initLenis, destroyLenis, scrollToTop } from './lib/lenis';
 
 /** Buttery smooth scrolling (Lenis) for the whole site. */
@@ -44,6 +46,12 @@ export default function App() {
     <BrowserRouter basename="/lourde-matha-website">
       <SmoothScroll />
       <ScrollToTop />
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:bg-gold focus:px-5 focus:py-3 focus:font-display focus:text-[12px] focus:font-bold focus:uppercase focus:tracking-[0.18em] focus:text-maroon-deep"
+      >
+        Skip to content
+      </a>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -54,9 +62,10 @@ export default function App() {
         <Route path="/offerings" element={<Offerings />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <BackToTop />
     </BrowserRouter>
   );
 }

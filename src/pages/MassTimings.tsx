@@ -110,7 +110,7 @@ function Schedule() {
 
 export default function MassTimings() {
   return (
-    <main>
+    <main id="main-content">
       <PageHero
         eyebrow="Worship with us"
         title="Mass Timings"

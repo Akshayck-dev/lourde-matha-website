@@ -184,7 +184,7 @@ function CommunitySection() {
 
 export default function About() {
   return (
-    <main>
+    <main id="main-content">
       <PageHero
         eyebrow="Lourde Matha Church · Thalayanadu"
         title="About Our Parish"

@@ -22,7 +22,7 @@ export default function SectionHeading({
     <Reveal className={centered ? 'text-center' : 'text-left'}>
       <p className={dark ? 'eyebrow-light' : 'eyebrow'}>{eyebrow}</p>
       <h2
-        className={`display-heading mt-4 text-4xl md:text-5xl ${
+        className={`display-heading mt-4 text-3xl md:text-4xl ${
           dark ? 'text-ivory' : ''
         } ${centered ? 'mx-auto max-w-3xl' : 'max-w-2xl'}`}
       >

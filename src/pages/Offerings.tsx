@@ -26,7 +26,7 @@ export default function Offerings() {
       />
 
       {/* Rates */}
-      <section className="bg-ivory py-12 md:py-16" aria-labelledby="offering-rates">
+      <section className="bg-ivory py-10 md:py-14" aria-labelledby="offering-rates">
         <div className="mx-auto max-w-4xl px-5 md:px-8">
           <Reveal>
             <div id="offering-rates">
@@ -63,7 +63,7 @@ export default function Offerings() {
       </section>
 
       {/* Bank details */}
-      <section className="bg-cream py-12 md:py-16" aria-labelledby="bank-details">
+      <section className="bg-cream py-10 md:py-14" aria-labelledby="bank-details">
         <div className="mx-auto max-w-4xl px-5 md:px-8">
           <Reveal>
             <div id="bank-details">
@@ -101,7 +101,7 @@ export default function Offerings() {
       </section>
 
       {/* Please note */}
-      <section className="bg-maroon-deep py-12 md:py-16" aria-labelledby="offering-note">
+      <section className="bg-maroon-deep py-10 md:py-14" aria-labelledby="offering-note">
         <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
           <Reveal>
             <div id="offering-note">

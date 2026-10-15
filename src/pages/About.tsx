@@ -26,7 +26,7 @@ const MINISTRY_ICONS = [Music, Users, BookOpen, HandHeart, Church];
 
 function Story() {
   return (
-    <section className="bg-ivory py-14 md:py-20">
+    <section className="bg-ivory py-10 md:py-14">
       <div className="mx-auto max-w-4xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Our story"
@@ -67,7 +67,7 @@ function Story() {
 
 function Mission() {
   return (
-    <section className="bg-cream/70 py-14 md:py-20">
+    <section className="bg-cream/70 py-10 md:py-14">
       <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
         <Reveal>
           <p className="eyebrow">Our mission</p>
@@ -84,7 +84,7 @@ function Mission() {
 function Values() {
   const sliderRef = useAutoSlider<HTMLDivElement>();
   return (
-    <section className="bg-ivory py-14 md:py-20">
+    <section className="bg-ivory py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="What we hold dear"
@@ -114,7 +114,7 @@ function Values() {
 
 function Leadership() {
   return (
-    <section className="bg-maroon-deep py-14 md:py-20">
+    <section className="bg-maroon-deep py-10 md:py-14">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <SectionHeading
           dark
@@ -149,7 +149,7 @@ function Leadership() {
 
 function CommunitySection() {
   return (
-    <section className="bg-ivory py-14 md:py-20">
+    <section className="bg-ivory py-10 md:py-14">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <div className="img-frame aspect-[4/3] shadow-soft">
@@ -205,7 +205,7 @@ export default function About() {
 function Sacraments() {
   const sliderRef = useAutoSlider<HTMLDivElement>();
   return (
-    <section className="bg-ivory py-14 md:py-20">
+    <section className="bg-ivory py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Milestones of faith"
@@ -253,7 +253,7 @@ function Sacraments() {
 function Ministries() {
   const sliderRef = useAutoSlider<HTMLDivElement>();
   return (
-    <section className="bg-maroon-deep py-14 md:py-20">
+    <section className="bg-maroon-deep py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           dark

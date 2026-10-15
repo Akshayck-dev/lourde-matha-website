@@ -24,7 +24,7 @@ export default function Gallery() {
         image={IMAGES['gallery-exterior']}
       />
 
-      <section className="bg-ivory py-14 md:py-20">
+      <section className="bg-ivory py-10 md:py-14">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="In pictures" title="Parish in Frames" />
 

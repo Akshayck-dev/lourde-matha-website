@@ -11,7 +11,7 @@ import { PARISH, EVENTS, EVENT_CATEGORIES, FEAST_VIDEOS, PATRONAL_FEASTS, type P
 
 function Feasts() {
   return (
-    <section className="bg-maroon-deep py-14 md:py-20">
+    <section className="bg-maroon-deep py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           dark
@@ -146,7 +146,7 @@ export default function Events() {
 
       <Feasts />
 
-      <section className="bg-ivory py-14 md:py-20">
+      <section className="bg-ivory py-10 md:py-14">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="Through the year" title="What’s Happening" />
 
@@ -234,7 +234,7 @@ export default function Events() {
       </section>
 
       {/* Past feast recordings */}
-      <section className="bg-maroon-deep py-14 md:py-20" aria-labelledby="feast-videos">
+      <section className="bg-maroon-deep py-10 md:py-14" aria-labelledby="feast-videos">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
             <div id="feast-videos" className="text-center">

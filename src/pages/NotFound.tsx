@@ -13,7 +13,7 @@ export default function NotFound() {
               <Church className="h-8 w-8" strokeWidth={1.5} aria-hidden="true" />
             </span>
             <p className="eyebrow mt-8">Lost your way</p>
-            <h1 className="display-heading mt-4 text-5xl text-maroon-deep md:text-6xl">
+            <h1 className="display-heading mt-4 text-4xl text-maroon-deep md:text-5xl">
               Page not found
             </h1>
             <p className="mx-auto mt-6 max-w-md text-[16px] font-light leading-relaxed text-charcoal/70">

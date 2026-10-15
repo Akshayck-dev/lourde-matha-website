@@ -75,7 +75,7 @@ function Hero() {
           initial={{ opacity: 0, y: 34 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease }}
-          className="mx-auto mt-6 max-w-4xl font-display text-[11.5vw] font-extrabold uppercase leading-[1.06] tracking-tight text-ivory sm:text-6xl md:text-7xl"
+          className="mx-auto mt-6 max-w-4xl font-display text-[11.5vw] font-extrabold leading-[1.08] tracking-tight text-ivory sm:text-5xl md:text-6xl"
         >
           A Place of Faith,
           <br />
@@ -134,7 +134,7 @@ function Hero() {
 
 function Welcome() {
   return (
-    <section id="welcome" className="bg-ivory py-14 md:py-24">
+    <section id="welcome" className="bg-ivory py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="A sanctuary of faith & grace"
@@ -142,7 +142,7 @@ function Welcome() {
         />
 
         <Reveal delay={0.05}>
-          <p className="mx-auto mt-8 max-w-4xl text-center font-display text-2xl font-extrabold uppercase leading-snug tracking-tight text-maroon-deep/15 md:text-4xl">
+          <p className="mx-auto mt-8 max-w-4xl text-center font-display text-2xl font-extrabold leading-snug tracking-tight text-maroon-deep/15 md:text-4xl">
             “Come to me, all you who are weary and burdened, and I will give you rest.”
           </p>
         </Reveal>
@@ -189,7 +189,7 @@ function Welcome() {
 
 function StoryBand() {
   return (
-    <section className="bg-cream py-14 md:py-20">
+    <section className="bg-cream py-10 md:py-14">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
         <Reveal>
           <div className="img-frame aspect-[16/10]">
@@ -231,7 +231,7 @@ function Schedule() {
   const todayIds = new Set(today.map((m) => m.id));
 
   return (
-    <section className="bg-ivory py-14 md:py-20">
+    <section className="bg-ivory py-10 md:py-14">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Worship with us"
@@ -249,7 +249,7 @@ function Schedule() {
                     <Clock className="h-8 w-8 text-white" strokeWidth={1.25} aria-hidden="true" />
                   </div>
                   <div className="flex flex-1 flex-col justify-center px-6 py-6">
-                    <p className="flex flex-wrap items-center gap-3 font-display text-lg font-extrabold uppercase tracking-tight text-maroon-deep">
+                    <p className="flex flex-wrap items-center gap-3 font-display text-lg font-bold tracking-tight text-maroon-deep">
                       {m.label}
                       {isToday && (
                         <span className="rounded-full bg-accent-coral px-2.5 py-0.5 font-display text-[10px] font-bold uppercase tracking-[0.18em] text-white">
@@ -284,12 +284,12 @@ function Schedule() {
 
 function ActionCards() {
   return (
-    <section className="bg-ivory pb-14 md:pb-20">
+    <section className="bg-ivory pb-10 md:pb-14">
       <div className="mx-auto grid max-w-6xl gap-6 px-5 md:grid-cols-2 md:px-8">
         <Reveal>
           <div className="flex h-full flex-col rounded-3xl bg-accent-teal px-8 py-12 text-white md:px-12">
             <HandHeart className="h-10 w-10" strokeWidth={1.25} aria-hidden="true" />
-            <h3 className="mt-6 font-display text-3xl font-extrabold uppercase tracking-tight">
+            <h3 className="mt-6 font-display text-2xl font-extrabold tracking-tight md:text-3xl">
               Prayer Intentions
             </h3>
             <p className="mt-3 max-w-md text-[16px] leading-relaxed text-white/85">
@@ -308,7 +308,7 @@ function ActionCards() {
         <Reveal delay={0.1}>
           <div className="flex h-full flex-col rounded-3xl bg-accent-blue px-8 py-12 text-white md:px-12">
             <Star className="h-10 w-10" strokeWidth={1.25} aria-hidden="true" />
-            <h3 className="mt-6 font-display text-3xl font-extrabold uppercase tracking-tight">
+            <h3 className="mt-6 font-display text-2xl font-extrabold tracking-tight md:text-3xl">
               Offerings &amp; Mass Intentions
             </h3>
             <p className="mt-3 max-w-md text-[16px] leading-relaxed text-white/85">
@@ -333,10 +333,10 @@ function ActionCards() {
 
 function QuoteBand() {
   return (
-    <section className="bg-sand py-14 md:py-20">
+    <section className="bg-sand py-10 md:py-14">
       <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
         <Reveal>
-          <blockquote className="font-display text-3xl font-extrabold uppercase italic leading-snug tracking-tight text-maroon-deep md:text-4xl">
+          <blockquote className="font-display text-2xl font-extrabold italic leading-snug tracking-tight text-maroon-deep md:text-3xl">
             “Hail Mary, full of grace, the Lord is with thee.”
           </blockquote>
           <p className="mt-6 font-display text-[12px] font-bold uppercase tracking-[0.24em] text-gold-dark">
@@ -355,7 +355,7 @@ function UpcomingEvents() {
   const sliderRef = useAutoSlider<HTMLDivElement>();
 
   return (
-    <section className="bg-cream py-14 md:py-20">
+    <section className="bg-cream py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Mark your calendar"
@@ -376,7 +376,7 @@ function UpcomingEvents() {
                   <p className="font-display text-[11px] font-bold uppercase tracking-[0.2em] text-gold-dark">
                     {event.category} · {event.dateLabel}
                   </p>
-                  <h3 className="mt-2 font-display text-xl font-bold uppercase leading-snug tracking-tight text-maroon-deep transition-colors group-hover:text-gold-dark">
+                  <h3 className="mt-2 font-display text-xl font-bold leading-snug tracking-tight text-maroon-deep transition-colors group-hover:text-gold-dark">
                     {event.title}
                   </h3>
                   <p className="mt-2 line-clamp-2 text-[14.5px] leading-relaxed text-charcoal/65">
@@ -406,7 +406,7 @@ function GalleryPreview() {
   const preview = GALLERY.slice(0, 6);
 
   return (
-    <section className="bg-ivory py-14 md:py-20">
+    <section className="bg-ivory py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Moments of grace"
@@ -428,7 +428,7 @@ function GalleryPreview() {
                   className="absolute inset-0 bg-maroon-deep/0 transition-colors duration-500 group-hover:bg-maroon-deep/25"
                   aria-hidden="true"
                 />
-                <span className="absolute bottom-4 left-4 translate-y-2 font-display text-lg font-bold uppercase tracking-tight text-ivory opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="absolute bottom-4 left-4 translate-y-2 font-display text-lg font-bold tracking-tight text-ivory opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                   {item.caption}
                 </span>
               </Link>

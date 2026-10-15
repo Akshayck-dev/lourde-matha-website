@@ -52,7 +52,7 @@ body {
 }
 
 .display-heading {
-  @apply font-display font-extrabold uppercase leading-[1.1] tracking-tight text-maroon-deep;
+  @apply font-display font-extrabold leading-[1.15] tracking-tight text-maroon-deep;
   text-wrap: balance;
 }
 
